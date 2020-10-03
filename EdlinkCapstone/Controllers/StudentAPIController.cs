@@ -31,5 +31,13 @@ namespace EdlinkCapstone.Controllers
             // Return the response.
             return response;
         }
+
+        [HttpGet("ShowStudents")]
+        public ActionResult<List<Student>> ShowStudents()
+        {
+            // TODO: Catch for unable to connect to database.
+            // Return the response.
+            return new StudentControllerBLL().GetStudents();
+        }
     }
 }

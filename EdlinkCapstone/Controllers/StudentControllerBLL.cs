@@ -29,5 +29,15 @@ namespace EdlinkCapstone.Controllers
             }
            return myStudent;
         }
+
+        public List<Student> GetStudents()
+        {
+            List<Student> students;
+            using (SchoolContext context = new SchoolContext())
+            {
+                students = context.Students.ToList();
+            }
+            return students;
+        }
     }
 }
