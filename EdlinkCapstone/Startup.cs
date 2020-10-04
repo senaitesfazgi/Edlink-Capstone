@@ -1,7 +1,9 @@
+using EdlinkCapstone.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -13,6 +15,7 @@ namespace EdlinkCapstone
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -22,6 +25,8 @@ namespace EdlinkCapstone
         {
 
             services.AddControllersWithViews();
+            services.AddDbContext<SchoolContext>(options => options.UseMySql("server=localhost;port=3306;user=root;database=capstone_demo"));
+
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

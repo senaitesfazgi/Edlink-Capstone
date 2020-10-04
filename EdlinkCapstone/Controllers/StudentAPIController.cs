@@ -15,19 +15,18 @@ namespace EdlinkCapstone.Controllers
         public ActionResult<Student> AddStudent(string firstName, string lastName, string address, string email, string phoneNumber, DateTime dateOfBirth, int schoolID)
         {
             ActionResult<Student> response;
-            Student myStudent;
-           /* try
-            {*/
+            int createdID;
+            try
+            {
                 // We aren't concerned with validation here. Only in BLL.
-                myStudent = new StudentControllerBLL().CreateStudent(firstName, lastName, address, email, phoneNumber, dateOfBirth, schoolID);
+                createdID = new StudentControllerBLL().CreateStudent(firstName, lastName, address, email, phoneNumber, dateOfBirth, schoolID);
                 // Encode our created object as JSON and bounce it back with the request.
-                response = Ok(myStudent);
-           /* }
-           /* catch (Exception e)
+                response = Ok(createdID);
+            }
+            catch (Exception e)
             {
                 response = UnprocessableEntity(new { error = e.Message });
             }
-           */
             // Return the response.
             return response;
         }
