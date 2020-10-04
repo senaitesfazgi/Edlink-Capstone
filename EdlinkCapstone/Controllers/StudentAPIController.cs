@@ -41,7 +41,7 @@ namespace EdlinkCapstone.Controllers
         }
 
         [HttpPut("Update")]
-        public ActionResult UpdateStudent_PUT(int id, string firstName, string lastName, string address, string email, string phoneNumber, DateTime dateOfBirth, int schoolID)
+        public ActionResult UpdateStudent_PUT(string id, string firstName, string lastName, string address, string email, string phoneNumber, DateTime dateOfBirth, int schoolID)
         {
             ActionResult response;
             try
