@@ -10,6 +10,8 @@ namespace EdlinkCapstone.Controllers
 {
     public class StudentControllerBLL : Controller
     {
+        //TODO: checking for  Duplicates using email
+        //Currently creating or registering a student
         public int CreateStudent(string firstName, string lastName, string address, string email, string phoneNumber, DateTime dateOfBirth, int schoolID)
         {
             int createdID;
@@ -236,6 +238,15 @@ namespace EdlinkCapstone.Controllers
                 target.PhoneNumber = phoneNumber;
                 target.DateOfBirth = dateOfBirth;
                 target.SchoolID = schoolID;
+                context.SaveChanges();
+            }
+          
+        }
+        public void DeleteStudentByID(int id)
+        {
+            using (SchoolContext context = new SchoolContext())
+            {
+                context.Students.Remove(context.Students.Where(x => x.ID == id).Single());
                 context.SaveChanges();
             }
         }

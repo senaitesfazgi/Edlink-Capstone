@@ -67,5 +67,40 @@ namespace EdlinkCapstone.Controllers
             }
             return response;
         }
+
+        [HttpDelete("Delete")]
+        public ActionResult DeleteStudent_DELETE(string id)
+        {
+            ActionResult response;
+
+            // This logic should probably be in the DeletePersonByID() method, but if I change the parameter type to string now, I'll have to fix compiler errors in the Views.
+            int idParsed;
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                response = Conflict(new { error = "ID was not provided." });
+            }
+            else
+            {
+                if (!int.TryParse(id, out idParsed))
+                {
+                    response = Conflict(new { error = "The provided ID is invalid." });
+                }
+                else
+                {
+                    try
+                    {
+                        new StudentControllerBLL().DeleteStudentByID(idParsed);
+                        response = Ok(new { message = $"Successfully deleted the student with ID {idParsed}." });
+                    }
+                    catch
+                    {
+                        response = NotFound(new { error = $"No Student at ID {idParsed} could be found." });
+                    }
+                }
+            }
+            return response;
+
+        }
+
     }
 }
