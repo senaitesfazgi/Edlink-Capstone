@@ -123,34 +123,23 @@ namespace EdlinkCapstone.Controllers
         }
 
         //Not Currently updating a student
-        public void UpdateStudent(string id, string firstName, string lastName, string address, string email, string phoneNumber, DateTime dateOfBirth, int schoolID)
+        public void UpdateStudent(int? id, string firstName, string lastName, string address, string email, string phoneNumber, DateTime dateOfBirth, int schoolID)
         {
-            id = id != null ? id.Trim() : null;
             firstName = firstName != null ? firstName.Trim() : null;
             lastName = lastName != null ? lastName.Trim() : null;
-            int idParsed = 0;
 
             using (SchoolContext context = new SchoolContext())
             {
                 StudentValidationException exception = new StudentValidationException();
-                if (string.IsNullOrWhiteSpace(id))
+                if (id == null)
                 {
                     exception.SubExceptions.Add(new ArgumentNullException(nameof(id), "ID was not provided."));
                 }
-                else
+                else if (context.Students.Where(x => x.ID == id).Count() != 1)
                 {
-                    if (!int.TryParse(id, out idParsed))
-                    {
-                        exception.SubExceptions.Add(new ArgumentException(nameof(id), "ID was not valid."));
-                    }
-                    else
-                    {
-                        if (context.Students.Where(x => x.ID == idParsed).Count() != 1)
-                        {
-                            exception.SubExceptions.Add(new NullReferenceException("Person with that ID does not exist."));
-                        }
-                    }
+                    exception.SubExceptions.Add(new NullReferenceException("Person with that ID does not exist."));
                 }
+
                 if (string.IsNullOrWhiteSpace(firstName))
                 {
                     exception.SubExceptions.Add(new ArgumentNullException(nameof(firstName), "First name was not provided."));
@@ -230,7 +219,7 @@ namespace EdlinkCapstone.Controllers
                     throw exception;
                 }
                 // If we're at this point, we have no exceptions, as nothing got thrown.
-                Student target = context.Students.Where(x => x.ID == idParsed).Single();
+                Student target = context.Students.Where(x => x.ID == id).Single();
                 target.FirstName = firstName;
                 target.LastName = lastName;
                 target.Address = address;
@@ -240,7 +229,6 @@ namespace EdlinkCapstone.Controllers
                 target.SchoolID = schoolID;
                 context.SaveChanges();
             }
-          
         }
         public void DeleteStudentByID(int id)
         {

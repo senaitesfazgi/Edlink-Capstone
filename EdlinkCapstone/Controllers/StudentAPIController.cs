@@ -44,25 +44,40 @@ namespace EdlinkCapstone.Controllers
         public ActionResult UpdateStudent_PUT(string id, string firstName, string lastName, string address, string email, string phoneNumber, DateTime dateOfBirth, int schoolID)
         {
             ActionResult response;
-            try
+             int idParsed;
+            if (id == null)
             {
-                new StudentControllerBLL().UpdateStudent(id, firstName, lastName, address, email, phoneNumber, dateOfBirth, schoolID);
-
-                // Semantically, we should be including a copy of the object (or at least a DTO rendering of it) in the Ok response.
-                // For our purposes, a message with the fields will suffice.
-                response = Ok(new { message = $"Successfully updated Student at ID {id} to be {firstName} {lastName}." });
+                response = Conflict(new { error = "ID was not provided." });
             }
-            catch (StudentValidationException e)
+            else
             {
-                // If it couldn't find the entity to update, that's the primary concern, so discard the other subexceptions and just return NotFound().
-                if (e.SubExceptions.Any(x => x.GetType() == typeof(NullReferenceException)))
+                if (!int.TryParse(id, out idParsed))
                 {
-                    response = NotFound(new { error = $"No entity exists at ID {id}." });
+                    response = Conflict(new { error = "The provided ID is invalid." });
                 }
-                // If there's no NullReferenceException, but there's still an exception, return the list of problems.
                 else
                 {
-                    response = UnprocessableEntity(new { errors = e.SubExceptions.Select(x => x.Message) });
+                    try
+                    {
+                        new StudentControllerBLL().UpdateStudent(int.Parse(id), firstName, lastName, address, email, phoneNumber, dateOfBirth, schoolID);
+
+                        // Semantically, we should be including a copy of the object (or at least a DTO rendering of it) in the Ok response.
+                        // For our purposes, a message with the fields will suffice.
+                        response = Ok(new { message = $"Successfully updated Student at ID {id} to be {firstName} {lastName}." });
+                    }
+                    catch (StudentValidationException e)
+                    {
+                        // If it couldn't find the entity to update, that's the primary concern, so discard the other subexceptions and just return NotFound().
+                        if (e.SubExceptions.Any(x => x.GetType() == typeof(NullReferenceException)))
+                        {
+                            response = NotFound(new { error = $"No entity exists at ID {id}." });
+                        }
+                        // If there's no NullReferenceException, but there's still an exception, return the list of problems.
+                        else
+                        {
+                            response = UnprocessableEntity(new { errors = e.SubExceptions.Select(x => x.Message) });
+                        }
+                    }
                 }
             }
             return response;
@@ -73,7 +88,7 @@ namespace EdlinkCapstone.Controllers
         {
             ActionResult response;
 
-            // This logic should probably be in the DeletePersonByID() method, but if I change the parameter type to string now, I'll have to fix compiler errors in the Views.
+            //This logic should probably be in the DeletePersonByID() method, but if I change the parameter type to string now, I'll have to fix compiler errors in the Views.
             int idParsed;
             if (string.IsNullOrWhiteSpace(id))
             {
@@ -89,12 +104,13 @@ namespace EdlinkCapstone.Controllers
                 {
                     try
                     {
-                        new StudentControllerBLL().DeleteStudentByID(idParsed);
-                        response = Ok(new { message = $"Successfully deleted the student with ID {idParsed}." });
+                
+                        new StudentControllerBLL().DeleteStudentByID(int.Parse(id));
+                        response = Ok(new { message = $"Successfully deleted the student with ID {id}." });
                     }
                     catch
                     {
-                        response = NotFound(new { error = $"No Student at ID {idParsed} could be found." });
+                        response = NotFound(new { error = $"No Student at ID {id} could be found." });
                     }
                 }
             }
