@@ -1,4 +1,6 @@
-﻿import React, { Component } from 'react';
+﻿//CreateStudent is Registration
+
+import React, { Component } from 'react';
 // Don't forget to "npm install axios" and import it on any pages from which you are making HTTP requests.
 import axios from 'axios';
 
@@ -47,8 +49,7 @@ export class CreateStudent extends Component {
     render() {
         return (
             <div>
-                <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
-                <p>Response Data: {JSON.stringify(this.state.response)}</p>
+                <h2>REGISTRATION</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlfor="firstName">First Name:</label>
                     <input id="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} />
