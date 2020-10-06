@@ -13,14 +13,16 @@ export class Schools extends Component {
                     <input id="firstName" type="text"/>
                 </form>
                 <div>
-                    <img src="" />
-                    <img src="" />
-                    <img src="" />
-                    <img src="" />
-                    <img src="" />
-                    <img src="" />
-                    <img src="" />
-                    <img src="" />
+                    <h3>School</h3>
+                    <h3>School</h3>
+                    <h3>School</h3>
+                    <h3>School</h3>
+                    <h3>School</h3>
+                    <h3>School</h3>
+                    <h3>School</h3>
+                    <h3>School</h3>
+                    <h3>School</h3>
+                    <h3>School</h3>
                 </div>
                 <h2>Welcome</h2>
                 <p>Take virtual tours</p>
