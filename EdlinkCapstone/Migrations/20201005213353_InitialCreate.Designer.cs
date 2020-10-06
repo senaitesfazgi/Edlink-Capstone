@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EdlinkCapstone.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20201003161906_InitialCreate")]
+    [Migration("20201005213353_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
