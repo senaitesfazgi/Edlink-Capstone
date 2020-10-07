@@ -10,7 +10,7 @@ export class Schools extends Component {
                 <h2>SCHOOLS</h2>
                 <form>
                     <label htmlfor="firstName">Search:</label>
-                    <input id="firstName" type="text"/>
+                    <input id="firstName" type="text" />
                 </form>
                 <div>
                     <h3>School</h3>

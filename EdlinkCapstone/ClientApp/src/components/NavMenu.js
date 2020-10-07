@@ -33,23 +33,19 @@ export class NavMenu extends Component {
             <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
               <ul className="navbar-nav flex-grow">
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
+                    <NavLink tag={Link} className="text-dark" to="/schools">SCHOOLS</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/counter">Counter</NavLink>
+                  <NavLink tag={Link} className="text-dark" to="/programs">PROGRAMS</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/schools">Schools</NavLink>
+                    <NavLink tag={Link} className="text-dark" to="/create-student">REGISTRATION</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/programs">Programs</NavLink>
-                </NavItem>
-
-                <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/create-student">Registration</NavLink>
+                    <NavLink tag={Link} className="text-light" to="/signup">Sign Up</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/signup">SignUp</NavLink>
+                    <NavLink tag={Link} className="text-light" to="/signin">Sign In</NavLink>
                 </NavItem>
               </ul>
             </Collapse>
