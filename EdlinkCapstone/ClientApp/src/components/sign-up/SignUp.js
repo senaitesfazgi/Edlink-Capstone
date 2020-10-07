@@ -41,6 +41,8 @@ export class SignUp extends Component {
         return (
             <div>
                 <h2>SignUp</h2>
+                <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
+                <p>Response Data: {JSON.stringify(this.state.response)}</p>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlfor="firstName">First Name:</label>
                     <input id="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} />
