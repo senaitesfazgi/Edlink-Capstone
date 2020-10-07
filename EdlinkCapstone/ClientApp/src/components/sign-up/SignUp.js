@@ -56,7 +56,7 @@ export class SignUp extends Component {
                     <label htmlfor="passWord">PassWord:</label>
                     <input id="passWord" type="password" value={this.state.passWord} onChange={this.handleChange} />
                     <br />
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="SignUp" />
                 </form>
             </div>
         );

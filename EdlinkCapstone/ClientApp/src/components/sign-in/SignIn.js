@@ -1,170 +1,80 @@
-import React from "react";
-import axios from "axios";
-import { connect } from "react-redux"; // this will enable connecting the redux store
-import {
-  setCurrentUser,
-  setLoggedIn,
-  updateUsers,
-} from "../../actions/social-media-app"; // actions required to dispatch redux
-import "./SignIn.css";
-import Logo from "../../images/Logo.png";
+//CreateStudent is Registration
 
-const initialState = {
-  email: "",
-  password: "",
-  warning: "",
-};
+import React, { Component } from 'react';
+// Don't forget to "npm install axios" and import it on any pages from which you are making HTTP requests.
+import axios from 'axios';
 
-class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = initialState;
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+// The name of the class is used in routing in App.js. The name of the file is not important in that sense.
+export class SignIn extends Component {
+    static displayName = SignIn.name;
 
-  // get all existing users from api & store in state
-  getUsers() {
-    axios
-      .get(
-        "https://jsonstorage.net/api/items/4d56c6a1-9bd8-4795-b714-8b6e815d2edd"
-      )
-      .then((response) => {
-        this.setState(response.data);
-      });
-  }
+    constructor(props) {
+        // 1) When we build the component, we assign the state to be loading, and register an empty list in which to store our forecasts.
+        super(props);
+        this.state = { statusCode: 0, response: [], email: "", passWord: "", waiting: false };
 
-  handleChange = (event) => {
-    event.preventDefault();
-    this.setState({
-      [event.target.id]: event.target.value,
-    });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-
-    axios
-      .get(
-        "https://jsonstorage.net/api/items/4d56c6a1-9bd8-4795-b714-8b6e815d2edd"
-      )
-      .then((response) => {
-        return response.data.users;
-      })
-      .then((allUsers) => {
-        let userExists = false;
-        let matchedUser;
-
-        // prevent sign in attempts with empty fields
-        if (
-          this.state.password.trim() === "" ||
-          this.state.email.trim() === ""
-        ) {
-          document.querySelector("#warning").innerHTML =
-            "Email and Password must be entered";
-        }
-        // if input fields have values
-        else {
-          // loop through all existing users and check for a match
-          for (let user of allUsers) {
-            if (user.email === this.state.email) {
-              if (user.password === this.state.password) {
-                userExists = true;
-                // if a sign in details are valid, store the matched user
-                matchedUser = user;
-              }
-            }
-          }
-          // no match for sign in info
-          if (!userExists) {
-            // display an error if no match was found
-            document.querySelector("#warning").innerHTML =
-              "invalid sign in credentials";
-          }
-          // if login details were valid
-          else {
-            // store current user
-            this.props.dispatch(setCurrentUser(matchedUser));
-            // set logged in state to true
-            this.props.dispatch(setLoggedIn(true));
-            // store the existing users in redux
-            this.props.dispatch(updateUsers(allUsers));
-
-            // redirect the user to newsfeed
-            try {
-              this.props.onNavigate.push("/NewsFeed");
-            } catch (error) {
-              this.props.history.push("/NewsFeed");
-            }
-
-          }
-        }
-      }); // end of async call
-  }; // end of handle submit function
-  navigateToSignUp() {
-    console.log("whts up");
-    try {
-      this.props.onNavigate.push("/sign-up/SignUp");
-    } catch (error) {
-      this.props.history.push("/sign-up/SignUp");
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-  }
 
-  render() {
-    return (
-      <div>
-        <div className="logoSignIn">
-          <img src={Logo} alt="OSAHD logo" />
-        </div>
-        <h3 className="welcome" >Welcome</h3>
-        <p className="statementSignIn">
-          {" "}
-          Share...Express...Connect...Your World Closer Together...{" "}
-        </p>
-        <section className="fieldSignIn">
-          <button className="signUpButton"
-            onClick={() => {
-              this.navigateToSignUp();
-            }}
-          >
-            SIGN UP{" "}
-          </button>
-          <form onSubmit={this.handleSubmit}>
-            <div id="warning" onSubmit={this.handleSubmit}></div>
-            <div className="blueSolid">
-              <input
-                className="input1"
-                type="email"
-                id="email"
-                placeholder="Enter Email:"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-              <input
-                className="input2"
-                type="password"
-                id="password"
-                placeholder="Enter Password:"
-                value={this.state.password}
-                onChange={this.handleChange}
-              />
+    handleChange(event) {
+        switch (event.target.id) {
+            case "email":
+                this.setState({ email: event.target.value });
+                break;
+            case "passWord":
+                this.setState({ passWord: event.target.value });
+                break;
+        }
+    }
+
+
+    // Either way we render the title, and a description.
+    render() {
+        return (
+            <div>
+                <h2>SignIn</h2>
+                <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
+                <p>Response Data: {JSON.stringify(this.state.response)}</p>
+                <form onSubmit={this.handleSubmit}>
+                    <label htmlfor="email">Email:</label>
+                    <input id="email" type="text" value={this.state.email} onChange={this.handleChange} />
+                    <br />
+                    <label htmlfor="passWord">PassWord:</label>
+                    <input id="passWord" type="password" value={this.state.passWord} onChange={this.handleChange} />
+                    <br />
+                    <input type="submit" value="SignIn" />
+                </form>
             </div>
-            <button className="signInButton" type="submit" onSubmit={this.handleSubmit}>
-              {" "}
-              SIGN IN{" "}
-            </button>
-          </form>
-        </section>
-        <div className="blueOpacity"></div>
-      </div>
-    );
-  }
-}
+        );
+    }
 
-// use the connect method to connect this component's props to the redux store
-// keep redux store values in this.state.store
-function mapStateToProps(state) {
-  return {
-    store: state,
-  };
+
+    async handleSubmit(event) {
+        event.preventDefault();
+        this.setState({ waiting: true });
+        // Axios replaces fetch(), same concept. Send the response and "then" when it comes back, put it in the state.
+
+        /*
+        axios.post(`person/api/create?firstName=${this.state.firstName}&lastname=${this.state.lastName}&phone=${this.state.phone}`).then(res => {
+            this.setState({ statusCode: res.status, response: res.data, loading: false });
+        });
+        */
+        axios({
+            method: 'post',
+            url: 'https://localhost:44380/API/UserAPI/authUser',
+            params: {
+                email: this.state.email,
+                passWord: this.state.passWord,
+            }
+        })
+            .then((res) => {
+                console.log("response from signin is", res);
+                this.setState({ statusCode: res.status, response: res.data, waiting: false });
+            })
+            .catch((err) => {
+                console.log("log error", err)
+                this.setState({ statusCode: err.response.status, response: err.response.data, waiting: false });
+            });
+    }
 }
-export default connect(mapStateToProps)(SignIn);
