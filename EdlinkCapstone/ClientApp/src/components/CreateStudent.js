@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 // Don't forget to "npm install axios" and import it on any pages from which you are making HTTP requests.
 import axios from 'axios';
+import './CreateStudent.css';
 
 // The name of the class is used in routing in App.js. The name of the file is not important in that sense.
 export class CreateStudent extends Component {
@@ -49,7 +50,9 @@ export class CreateStudent extends Component {
     render() {
         return (
             <div>
-                <h2>REGISTRATION</h2>
+                <div className="title-background">
+                    <h2>REGISTRATION</h2>
+                </div>
                 <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
                 <p>Response Data: {JSON.stringify(this.state.response)}</p>
                 <form onSubmit={this.handleSubmit}>
