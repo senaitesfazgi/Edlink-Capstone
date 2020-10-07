@@ -7,6 +7,7 @@ import { Counter } from './components/Counter';
 import { Schools } from './components/Schools';
 import './custom.css'
 import { CreateStudent } from './components/CreateStudent';
+import { SignUp } from './components/sign-up/SignUp';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -19,6 +20,7 @@ export default class App extends Component {
         <Route path='/programs' component={Programs} />
         <Route path='/schools' component={Schools} />
         <Route path='/create-student' component={CreateStudent} />
+        <Route path='/signup' component={SignUp} />
       </Layout>
     );
   }
