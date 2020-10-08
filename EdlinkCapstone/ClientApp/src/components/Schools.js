@@ -8,11 +8,11 @@ export class Schools extends Component {
         return (
             <div>
                 <div className="title-background">
-                    <h2>SCHOOLS</h2>
+                    <h2 className="Title">SCHOOLS</h2>
                 </div>
                 <form>
-                    <label htmlfor="firstName">Search:</label>
-                    <input id="firstName" type="text" />
+                    <label className="searchBarTitle" htmlfor="firstName">SEARCH:</label>
+                    <input className="searchBarInput" id="firstName" type="text" />
                 </form>
                 <div>
                     <h3>School</h3>

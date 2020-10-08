@@ -9,12 +9,12 @@ export class Home extends Component {
         return (
             <div className="backGround">
                 <div className="title-background">
-                    <h2>HOME</h2>
+                    <h2 className="Title">HOME</h2>
                 </div>
-                <h3 className="missionStatement">Make the right choice in your kid's future!</h3>
+                <h4 className="missionStatement">Make the right choice in your kid's future!</h4>
                 <form>
-                    <label htmlfor="firstName">Search:</label>
-                    <input id="firstName" type="text" />
+                    <label className="searchBarTitle" htmlfor="firstName">SEARCH</label>
+                    <input className="searchBarInput" id="firstName" type="text" />
                 </form>
             </div>
         );

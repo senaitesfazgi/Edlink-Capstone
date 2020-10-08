@@ -7,11 +7,11 @@ export class Programs extends Component {
         return (
             <div>
                 <div className="title-background">
-                    <h2>PROGRAMS</h2>
+                    <h2 className="Title">PROGRAMS</h2>
                 </div>
                 <form>
-                    <label htmlfor="firstName">Search:</label>
-                    <input id="firstName" type="text" />
+                    <label className="searchBarTitle" htmlfor="firstName">SEARCH:</label>
+                    <input className="searchBarInput" id="firstName" type="text" />
                 </form>
             </div>
         );
