@@ -6,7 +6,9 @@ export class Programs extends Component {
     render() {
         return (
             <div>
-                <h2>PROGRAMS</h2>
+                <div className="title-background">
+                    <h2>PROGRAMS</h2>
+                </div>
                 <form>
                     <label htmlfor="firstName">Search:</label>
                     <input id="firstName" type="text" />

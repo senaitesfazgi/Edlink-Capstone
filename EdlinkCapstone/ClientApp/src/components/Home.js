@@ -9,8 +9,14 @@ export class Home extends Component {
   render () {
     return (
         <div>
-            <SignUp />
-            <SignIn />
+            <div className="title-background">
+                <h2>HOME</h2>
+            </div>
+            <h3>Make the right choice in your kid's future!</h3>
+            <form>
+                <label htmlfor="firstName">Search:</label>
+                <input id="firstName" type="text" />
+            </form>
       </div> 
     );
   }
