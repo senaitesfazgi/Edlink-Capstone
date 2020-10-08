@@ -34,8 +34,12 @@ class Login extends Component {
                 if (response.status == 200) {
                     console.log("Login successfull");
                     var uploadscreen = [];
-                    uploadscreen.push(<Uploadscreen appContext={this.props.appContext} />)
-                    this.props.appContext.setState({ loginPage: [], uploadscreen: uploadscreen })
+                    uploadscreen.push(<Uploadscreen parentContext={this} />)
+                    this.props.parentContext.setState(
+                        {
+                            loginPage: [],
+                            uploadscreen: uploadscreen
+                        })
                 }
                 else if (response.status == 204) {
                     console.log("Email password do not match");
