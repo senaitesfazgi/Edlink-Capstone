@@ -16,25 +16,27 @@ class Register extends Component {
         }
     }
     handleClick(event) {
-        var apiBaseUrl = "https://localhost:44380/API/UserAPI/registeruser";
-        console.log("values", this.state.firstName, this.state.lastName, this.state.email, this.state.passWord);
-        //To be done:check for empty values before hitting submit
-        var self = this;
-        var payload = {
-            "firstName": this.state.firstName,
-            "lastName": this.state.lastName,
-            "email": this.state.email,
-            "password": this.state.passWord
-        }
-        axios.post(apiBaseUrl, payload)
-            .then(function (response) {
+    this.setState({ waiting: true })
+
+        axios({
+            method: 'post',
+            url: 'https://localhost:44380/API/UserAPI/registeruser',
+            params: {
+                firstName: this.state.firstName,
+                lastName: this.state.lastName,
+                email: this.state.email,
+                passWord: this.state.passWord
+            }
+        })
+            .then((response) => {
+                this.setState({ statusCode: response.status, response: response.data, waiting: false });
                 console.log(response);
                 if (response.data.code == 200) {
-                    //  console.log("registration successfull");
+                    console.log("registration successfull");
                     var loginscreen = [];
                     loginscreen.push(<Login parentContext={this} />);
                     var loginmessage = "Not Registered yet.Go to registration";
-                    self.props.parentContext.setState({
+                    this.props.parentContext.setState({
                         loginscreen: loginscreen,
                         loginmessage: loginmessage,
                         buttonLabel: "Register",
@@ -42,7 +44,8 @@ class Register extends Component {
                     });
                 }
             })
-            .catch(function (error) {
+            .catch((error) => {
+                this.setState({ statusCode: error.response.status, response: error.response.data, waiting: false });
                 console.log(error);
             });
     }

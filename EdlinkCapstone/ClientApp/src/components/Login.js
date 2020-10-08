@@ -15,22 +15,27 @@ class Login extends Component {
     }
 
     handleClick(event) {
-        var apiBaseUrl = "https://localhost:44380/API/UserAPI/authUser";
-        var self = this;
-        var payload = JSON.stringify({
-            "email": this.state.email,
-            "passWord": this.state.passWord
-        });
-        axios.post("https://localhost:44380/API/UserAPI/authUser", payload, { headers: { "Content-Type": "application/json" } })
-            .then(function (response) {
+        event.preventDefault();
+        this.setState({ waiting: true })
+        
+        axios({
+            method: 'post',
+            url: 'https://localhost:44380/API/UserAPI/authUser',
+            params: {
+                email: this.state.email,
+                passWord: this.state.passWord
+            }
+        })
+            .then((response) => {
+                this.setState({ statusCode: response.status, response: response.data, waiting: false });
                 console.log(response);
-                if (response.data.code == 200) {
+                if (response.data.statusCode === 200) {
                     console.log("Login successfull");
                     var uploadscreen = [];
-                    uploadscreen.push(<Uploadscreen appContext={self.props.appContext} />)
-                    self.props.appContext.setState({ loginPage: [], uploadscreen: uploadscreen })
+                    uploadscreen.push(<Uploadscreen appContext={this.props.appContext} />)
+                    this.props.appContext.setState({ loginPage: [], uploadscreen: uploadscreen })
                 }
-                else if (response.data.code == 204) {
+                else if (response.data.statusCode === 204) {
                     console.log("Username password do not match");
                     alert("username password do not match")
                 }
@@ -39,7 +44,8 @@ class Login extends Component {
                     alert("Username does not exist");
                 }
             })
-            .catch(function (error) {
+            .catch((error) => {
+                this.setState({ statusCode: error.response.status, response: error.response.data, waiting: false });
                 console.log(error);
             });
     }
