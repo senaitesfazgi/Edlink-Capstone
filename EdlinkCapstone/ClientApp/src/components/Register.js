@@ -9,6 +9,8 @@ class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            statusCode: 0,
+            response:[],
             firstName: '',
             lastName: '',
             email: '',
@@ -31,11 +33,11 @@ class Register extends Component {
             .then((response) => {
                 this.setState({ statusCode: response.status, response: response.data, waiting: false });
                 console.log(response);
-                if (response.data.code == 200) {
+                if (response.status == 201) {
                     console.log("registration successfull");
                     var loginscreen = [];
                     loginscreen.push(<Login parentContext={this} />);
-                    var loginmessage = "Not Registered yet.Go to registration";
+                    var loginmessage = "Not Registered yet? Go to registration";
                     this.props.parentContext.setState({
                         loginscreen: loginscreen,
                         loginmessage: loginmessage,
@@ -45,7 +47,7 @@ class Register extends Component {
                 }
             })
             .catch((error) => {
-                this.setState({ statusCode: error.response.status, response: error.response.data, waiting: false });
+                this.setState({ statusCode: error.status, response: error.data, waiting: false });
                 console.log(error);
             });
     }
@@ -57,6 +59,8 @@ class Register extends Component {
                         <AppBar
                             title="Register"
                         />
+                        <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
+                        <p>Response Data: {JSON.stringify(this.state.response)}</p>
                         <TextField
                             hintText="Enter your First Name"
                             floatingLabelText="First Name"
