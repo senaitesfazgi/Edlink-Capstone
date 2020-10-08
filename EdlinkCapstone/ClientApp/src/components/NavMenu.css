@@ -2,6 +2,7 @@
 .logo {
     margin-top: 10px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .text-dark {
@@ -17,8 +18,8 @@
     color: white !important;
 }
 
-.text-dark:hover {
-  background-color: rgb(252, 177, 74);
+    .text-dark:hover {
+        background-color: rgb(252, 177, 74);
     }
 
 .text-light {
@@ -34,23 +35,23 @@
     margin: 10px;
 }
 
-.text-light:hover {
-    background-color: rgb(25, 164, 172);
-}
+    .text-light:hover {
+        background-color: rgb(25, 164, 172);
+    }
 
 html {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 /*For tablet*/
-@media (min-width: 768px) {
+@media (min-width: 500px) {
     .text-light {
         margin: 10px;
     }
 }
 
 /*For desktop*/
-@media (min-width: 1200px) {
+@media (min-width: 960px) {
     html {
         font-size: 18px;
     }

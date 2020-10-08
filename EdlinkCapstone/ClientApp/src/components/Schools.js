@@ -20,11 +20,6 @@ export class Schools extends Component {
                     <h3>School</h3>
                     <h3>School</h3>
                     <h3>School</h3>
-                    <h3>School</h3>
-                    <h3>School</h3>
-                    <h3>School</h3>
-                    <h3>School</h3>
-                    <h3>School</h3>
                 </div>
             </div>
         );

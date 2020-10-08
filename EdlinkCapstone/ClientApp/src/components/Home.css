@@ -21,11 +21,19 @@
     .title-background {
         border-left: 5rem solid rgb(117, 137, 189);
     }
+
+    .backGround {
+        background-color: rgb(154, 216, 222);
+    }
 }
 
 /*For desktop*/
 @media screen and (min-width: 1200px) {
     .title-background {
         border-left: 11.5rem solid rgb(117, 137, 189);
+    }
+
+    .backGround {
+        background-color: rgb(154, 216, 222);
     }
 }
