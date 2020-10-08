@@ -31,25 +31,32 @@
     margin-top: 5px;
     text-align: center;
     color: white !important;
+    margin: 10px;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 .text-light:hover {
     background-color: rgb(25, 164, 172);
 }
 
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
 html {
   font-size: 18px;
 }
 
-/*For tablet and desktop*/
+/*For tablet*/
 @media (min-width: 768px) {
+    .text-light {
+        margin: 10px;
+    }
+}
+
+/*For desktop*/
+@media (min-width: 1200px) {
     html {
         font-size: 18px;
     }
@@ -60,16 +67,18 @@ html {
     }
 
     .text-dark {
-        color: white !important;
         margin: 20px;
         width: 90%;
     }
 
     .text-light {
-        color: white !important;
         margin: 10px;
-        margin-top: 10px;
+        margin-top: 50px;
         font-size: 12px;
         width: 80%;
     }
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }

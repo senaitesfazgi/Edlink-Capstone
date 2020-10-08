@@ -3,17 +3,24 @@
     background-color: rgb(117, 137, 189);
     height: 50px;
     color: white !important;
+    position: relative;
+    margin-left: -50vw;
+    width: 100vw;
+    left: 50%;
+    border-left: 1rem solid rgb(117, 137, 189);
+    margin-top: -18px;
 }
 
-/*For tablet and desktop*/
+/*For tablet*/
 @media screen and (min-width: 768px) {
     .title-background {
-        background-color: rgb(117, 137, 189);
-        height: 50px;
-        color: white !important;
-        width: 100vw;
-        position: relative;
-        margin-left: -50vw;
-        left: 50%;
+        border-left: 5rem solid rgb(117, 137, 189);
+    }
+}
+
+/*For desktop*/
+@media screen and (min-width: 1200px) {
+    .title-background {
+        border-left: 11.5rem solid rgb(117, 137, 189);
     }
 }
