@@ -9,6 +9,8 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            statusCode: 0,
+            response: [],
             email: '',
             passWord: ''
         }
@@ -29,23 +31,23 @@ class Login extends Component {
             .then((response) => {
                 this.setState({ statusCode: response.status, response: response.data, waiting: false });
                 console.log(response);
-                if (response.data.statusCode === 200) {
+                if (response.status == 200) {
                     console.log("Login successfull");
                     var uploadscreen = [];
                     uploadscreen.push(<Uploadscreen appContext={this.props.appContext} />)
                     this.props.appContext.setState({ loginPage: [], uploadscreen: uploadscreen })
                 }
-                else if (response.data.statusCode === 204) {
-                    console.log("Username password do not match");
-                    alert("username password do not match")
+                else if (response.status == 204) {
+                    console.log("Email password do not match");
+                    alert("Email password do not match")
                 }
                 else {
-                    console.log("Username does not exists");
-                    alert("Username does not exist");
+                    console.log("Email does not exists");
+                    alert("Email does not exist");
                 }
             })
             .catch((error) => {
-                this.setState({ statusCode: error.response.status, response: error.response.data, waiting: false });
+                this.setState({ statusCode: error.status, response: error.data, waiting: false });
                 console.log(error);
             });
     }
@@ -57,6 +59,8 @@ class Login extends Component {
                         <AppBar
                             title="Login"
                         />
+                        <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
+                        <p>Response Data: {JSON.stringify(this.state.response)}</p>
                         <TextField
                             hintText="Enter your Username"
                             floatingLabelText="Email"
