@@ -10,6 +10,12 @@
     border-left: 1rem solid rgb(117, 137, 189);
 }
 
+.missionStatement {
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+
 /*For tablet*/
 @media screen and (min-width: 768px) {
     .title-background {
