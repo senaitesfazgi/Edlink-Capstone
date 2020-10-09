@@ -49,35 +49,35 @@ export class CreateStudent extends Component {
     // Either way we render the title, and a description.
     render() {
         return (
-            <div>
+            <div className="backGround">
                 <div className="title-background">
                     <h2 className="Title">REGISTRATION</h2>
                 </div>
                 <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
                 <p>Response Data: {JSON.stringify(this.state.response)}</p>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlfor="firstName">First Name:</label>
-                    <input id="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} />
+                <form className = "studentDetails" onSubmit={this.handleSubmit}>
+                    <label className="textLabel" htmlfor="firstName">FIRST NAME:</label>
+                    <input className="textInput" id="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} />
                     <br />
-                    <label htmlfor="lastName">Last Name:</label>
-                    <input id="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} />
+                    <label className="textLabel" htmlfor="lastName">LAST NAME:</label>
+                    <input className="textInput" id="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} />
                     <br />
-                    <label htmlfor="address">Address:</label>
-                    <input id="address" type="text" value={this.state.address} onChange={this.handleChange} />
+                    <label className="textLabel" htmlfor="address">ADDRESS:</label>
+                    <input className="textInput" id="address" type="text" value={this.state.address} onChange={this.handleChange} />
                     <br />
-                    <label htmlfor="email">Email:</label>
-                    <input id="email" type="text" value={this.state.email} onChange={this.handleChange} />
+                    <label className="textLabel" htmlfor="email">EMAIL:</label>
+                    <input className="textInput" id="email" type="text" value={this.state.email} onChange={this.handleChange} />
                     <br />
-                    <label htmlfor="phoneNumber">Phone Number:</label>
-                    <input id="phoneNumber" type="text" value={this.state.phoneNumber} onChange={this.handleChange} />
+                    <label className="textLabel" htmlfor="phoneNumber">PHONE NUMBER:</label>
+                    <input className="textInput" id="phoneNumber" type="text" value={this.state.phoneNumber} onChange={this.handleChange} />
                     <br />
-                    <label htmlfor="dateOfBirth">Date of Birth:</label>
-                    <input id="dateOfBirth" type="text" value={this.state.dateOfBirth} onChange={this.handleChange} />
+                    <label className="textLabel" htmlfor="dateOfBirth">DATE OF BIRTH:</label>
+                    <input className="textInput" id="dateOfBirth" type="text" value={this.state.dateOfBirth} onChange={this.handleChange} />
                     <br />
-                    <label htmlfor="schoolID">School ID:</label>
-                    <input id="schoolID" type="text" value={this.state.schoolID} onChange={this.handleChange} />
+                    <label className="textLabel" htmlfor="schoolID">SCHOOL ID:</label>
+                    <input className="textInput" id="schoolID" type="text" value={this.state.schoolID} onChange={this.handleChange} />
                     <br />
-                    <input type="submit" value="Submit" />
+                    <input className="submitButton" type="submit" value="REGISTER" />
                 </form>
             </div>
         );
