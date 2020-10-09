@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Login from './Login'
 import axios from 'axios';
+import Uploadscreen from './Uploadscreen';
 class Register extends Component {
     constructor(props) {
         super(props);
@@ -35,15 +36,13 @@ class Register extends Component {
                 console.log(response);
                 if (response.status == 201) {
                     console.log("registration successfull");
-                    var loginscreen = [];
-                    loginscreen.push(<Login parentContext={this} />);
-                    var loginmessage = "Not Registered yet? Go to registration";
-                    this.props.parentContext.setState({
-                        loginscreen: loginscreen,
-                        loginmessage: loginmessage,
-                        buttonLabel: "Register",
-                        isLogin: true
-                    });
+                    Register.push(<Login />);
+                   /* this.props.parentContext.setState({
+                       //loginscreen: loginscreen,
+                        //loginmessage: loginmessage,
+                        //buttonLabel: "Register",
+                        //isLogin: true
+                    });*/
                 }
             })
             .catch((error) => {
