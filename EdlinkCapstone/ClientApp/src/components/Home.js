@@ -12,8 +12,8 @@ export class Home extends Component {
                     <h2 className="Title">HOME</h2>
                 </div>
                 <div className="welcomeBackground">
-                    <p>Welcome</p>
-                    <p>Take a Virtual Tour</p>
+                    <p className="welcome">Welcome</p>
+                    <p className="tour">Take a Virtual Tour</p>
                 </div>
                 <h4 className="missionStatement">Make the right choice in your kid's future!</h4>
                 <form>

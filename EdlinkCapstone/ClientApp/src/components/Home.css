@@ -3,6 +3,8 @@
     background-color: rgb(117, 137, 189);
     height: 50px;
     color: white !important;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .Title {
@@ -13,13 +15,13 @@
     margin-bottom: 20px;
     margin-top: -370px;
     margin-left: 60px;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .searchBarInput {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    border: 6px solid rgb(25, 164, 172);
+    border: 7px solid rgb(25, 164, 172);
     width: 50%;
 }
 
@@ -31,25 +33,49 @@
     color: white !important;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 25px;
-    width: 30%;
-    padding-bottom: 4px;
+    font-size: 18px;
+    width: 25%;
+    height: 43px;
     margin-left: 60px;
+    padding-top: 8px;
 }
 
 .welcomeBackground {
     background-color: rgb(145, 172, 209);
-    width: 360px;
-    height: 270px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
     margin-left: 60px;
     margin-top: 120px;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 50px;
     border: 6px solid rgb(25, 164, 172);
+}
+
+.welcome {
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-left: 45px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tour {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    margin-left: 25px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /*For tablet*/
 @media screen and (min-width: 768px) {
+    .title-background {
+        flex: 100%;
+    }
+    
     .backGround {
         background-color: rgb(154, 216, 222);
     }
@@ -57,16 +83,22 @@
 
 /*For desktop*/
 @media screen and (min-width: 1200px) {
+    .title-background {
+        flex: 100%;
+    }
+    
     .backGround {
         background-color: rgb(154, 216, 222);
         height: 420px;
     }
 
     .missionStatement {
-        margin-top: 20px;
+        margin-top: -220px;
+        margin-bottom: 100px;
+        font-size: 27px;
     }
 
-        .searchBarInput {
+    .searchBarInput {
         width: 31%;
     }
 
@@ -79,5 +111,19 @@
         height: 270px;
         margin-left: 640px;
         margin-top: 40px;
+    }
+
+    .welcome {
+        margin-top: 30px;
+        margin-left: 120px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tour {
+        margin-left: 100px;
+        margin-top: -50px;
+        display: flex;
+        flex-wrap: wrap;
     }
 }
