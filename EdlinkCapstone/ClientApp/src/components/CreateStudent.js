@@ -49,7 +49,7 @@ export class CreateStudent extends Component {
     // Either way we render the title, and a description.
     render() {
         return (
-            <div className="backGround">
+            <div className="backGroundRegistration">
                 <div className="title-background">
                     <h2 className="Title">REGISTRATION</h2>
                 </div>
