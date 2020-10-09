@@ -8,7 +8,12 @@ export class Schools extends Component {
     constructor(props) {
  
         super(props);
-        this.state = { schools: [], loading: true };
+        this.state = { schools: [], loading: true, search: 'Level Up' };
+
+    }
+
+    updateSearch(event) {
+        this.setState({ search: event.target.value.substr(0, 20) });
     }
 
     componentDidMount() {
@@ -17,7 +22,11 @@ export class Schools extends Component {
     }
 
     static renderSchoolsTable(schools) {
- 
+        let filteredSchools = this.props.schools.filter(
+            school => { 
+                return school.school_name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+
+            });
         return (
             <div className="App">
                 <h1>Edmonton Public Schools</h1>
@@ -29,7 +38,7 @@ export class Schools extends Component {
                 {/* Display data from API */}
                 <div className="schools">
                     {
-                        schools.map((school, index) => {
+                        filteredSchools.map((school, index) => {
                             return (
                                 <div className="school" key={index}>
                                     
@@ -65,8 +74,9 @@ export class Schools extends Component {
                     <h2 className="Title">Schools</h2>
                 </div>
                 <form>
-                    <label className="searchBarTitle" htmlfor="firstName">SEARCH:</label>
-                    <input className="searchBarInput" id="firstName" type="text" />
+                        <label className="searchBarTitle" htmlfor="firstName">SEARCH:</label>
+                        <input className="searchBarInput" id="firstName" type="text" value={this.state.search} />
+                        onChange={this.updateSearch.bind(this)}
                 </form>
             </div>
 
