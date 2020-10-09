@@ -11,6 +11,10 @@ export class Home extends Component {
                 <div className="title-background">
                     <h2 className="Title">HOME</h2>
                 </div>
+                <div className="welcomeBackground">
+                    <p>Welcome</p>
+                    <p>Take a Virtual Tour</p>
+                </div>
                 <h4 className="missionStatement">Make the right choice in your kid's future!</h4>
                 <form>
                     <label className="searchBarTitle" htmlfor="firstName">SEARCH</label>

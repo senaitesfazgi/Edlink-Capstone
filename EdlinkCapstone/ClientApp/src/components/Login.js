@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Uploadscreen from './Uploadscreen';
 import axios from 'axios';
+import { Home } from './Home';
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -33,12 +34,14 @@ class Login extends Component {
                 console.log(response);
                 if (response.status == 200) {
                     console.log("Login successfull");
-                    var uploadscreen = [];
-                    uploadscreen.push(<Uploadscreen parentContext={this} />)
+                    var loginscreen = [];
+                    loginscreen.push(<Home parentContext={this} />)
                     this.props.parentContext.setState(
                         {
-                            loginPage: [],
-                            uploadscreen: uploadscreen
+                            loginscreen: loginscreen,
+                            //loginmessage: loginmessage,
+                            //buttonLabel: "Register",
+                            //isLogin: true
                         })
                 }
                 else if (response.status == 204) {

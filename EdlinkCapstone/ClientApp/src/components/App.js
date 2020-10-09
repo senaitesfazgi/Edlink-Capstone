@@ -31,7 +31,6 @@ class App extends Component {
             <Layout>
                 <div className="App">
                     <Route path='/loginPage' component={Loginscreen} />
-                    <Route path='/loginPage' component={Uploadscreen} />
                     <Route exact path='/' component={Home} />
                     <Route path='/programs' component={Programs} />
                     <Route path='/schools' component={Schools} />
