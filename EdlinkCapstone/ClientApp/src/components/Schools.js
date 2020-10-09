@@ -53,25 +53,33 @@ export class Schools extends Component {
         }
    
     render() {
-        // 4) When we render, this ternary statement will with print loading, or render the forecasts table depending if the async call has come back yet.
+        
         let contents = this.state.loading
             ? <p><em>Loading...</em></p>
             : Schools.renderSchoolsTable(this.state.schools);
         
         return (
+        <div>
+            <div>
+                <div className="title-background">
+                    <h2 className="Title">Schools</h2>
+                </div>
+                <form>
+                    <label className="searchBarTitle" htmlfor="firstName">SEARCH:</label>
+                    <input className="searchBarInput" id="firstName" type="text" />
+                </form>
+            </div>
+
             <div>
                 
                 {contents}
-            </div>
+                </div>
+        </div>
         );
     }
 
     async populateSchoolsData() {
-        // 3) Make the async call to the API.
-        // When an async call is made, it "awaits" a response. This means that rather than the server hanging and keeping the "thread" (process) open, it shelves the thread to be picked up when the response comes back.
-        // This frees up server resources to do other things in the event the request takes a few seconds (or more, if your internet is straight out of 1995).
-
-        // Axios replaces fetch(), same concept. Send the response and "then" when it comes back, put it in the state.
+        
         axios.get('https://data.edmonton.ca/resource/nk6t-8jsz.json').then(res => {
             this.setState({ schools: res.data, loading: false });
 
@@ -84,7 +92,6 @@ export class Schools extends Component {
 
 
 }
-
 
 
 
