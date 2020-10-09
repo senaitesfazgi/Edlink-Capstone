@@ -55,7 +55,7 @@ class Register extends Component {
         return (
             <div>
                 <MuiThemeProvider>
-                    <div>
+                    <div>fa
                         <AppBar
                             title="Register"
                         />
