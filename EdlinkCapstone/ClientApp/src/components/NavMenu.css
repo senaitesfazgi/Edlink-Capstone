@@ -21,20 +21,21 @@
         background-color: rgb(252, 177, 74);
     }
 
-.text-light {
+.login {
     background-color: rgb(252, 177, 74);
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
+    font-size: 10px;
     cursor: pointer;
     border-radius: 20px;
     margin-top: 5px;
     text-align: center;
     color: white !important;
     margin: 10px;
+    width: 40%;
 }
 
-    .text-light:hover {
+    .login:hover {
         background-color: rgb(25, 164, 172);
     }
 
@@ -44,8 +45,11 @@ html {
 
 /*For tablet*/
 @media (min-width: 500px) {
-    .text-light {
+    .login {
         margin: 10px;
+        margin-top: 50px;
+        font-size: 12px;
+        width: 100%;
     }
 
     .text-dark {
@@ -69,10 +73,10 @@ html {
         width: 90%;
     }
 
-    .text-light {
+    .login {
         margin: 10px;
         margin-top: 50px;
         font-size: 12px;
-        width: 80%;
+        width: 100%;
     }
 }
