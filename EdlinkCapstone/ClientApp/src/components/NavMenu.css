@@ -5,6 +5,10 @@
     margin-left: 60px;
 }
 
+.logo:hover {
+    background-color: rgb(252, 177, 74);
+}
+
 .text-dark {
     background-color: rgb(25, 164, 172);
     font-weight: bold;
