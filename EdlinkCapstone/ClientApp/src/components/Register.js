@@ -36,13 +36,15 @@ class Register extends Component {
                 console.log(response);
                 if (response.status == 201) {
                     console.log("registration successfull");
-                    Register.push(<Login />);
-                   /* this.props.parentContext.setState({
-                       //loginscreen: loginscreen,
-                        //loginmessage: loginmessage,
-                        //buttonLabel: "Register",
-                        //isLogin: true
-                    });*/
+                    var loginscreen = [];
+                    var loginmessage = [];
+                    loginscreen.push(<Login />);
+                    this.props.parentContext.setState({
+                       loginscreen: loginscreen,
+                        loginmessage: loginmessage,
+                        buttonLabel: "Register",
+                        isLogin: true
+                    });
                 }
             })
             .catch((error) => {
@@ -54,7 +56,7 @@ class Register extends Component {
         return (
             <div>
                 <MuiThemeProvider>
-                    <div>fa
+                    <div>
                         <AppBar
                             title="Register"
                         />

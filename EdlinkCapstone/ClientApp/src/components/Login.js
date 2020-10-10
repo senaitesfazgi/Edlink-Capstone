@@ -35,13 +35,14 @@ class Login extends Component {
                 if (response.status == 200) {
                     console.log("Login successfull");
                     var loginscreen = [];
+                    var loginmessage = [];
                     loginscreen.push(<Home parentContext={this} />)
                     this.props.parentContext.setState(
                         {
                             loginscreen: loginscreen,
-                            //loginmessage: loginmessage,
-                            //buttonLabel: "Register",
-                            //isLogin: true
+                            loginmessage: loginmessage,
+                            buttonLabel: "Register",
+                            isLogin: true
                         })
                 }
                 else if (response.status == 204) {
