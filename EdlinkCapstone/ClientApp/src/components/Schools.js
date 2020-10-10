@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react';
 import axios from 'axios';
-
+import './Schools.css';
 
 export class Schools extends Component {
     static displayName = Schools.name;
