@@ -22,8 +22,8 @@ export class Schools extends Component {
     render() {
         // schools are filtered based upon the search state. 
          let filteredSchools = this.state.schools.filter(
-            (school) => {
-                return school.school_name.toLowerCase().indexOf(this.state.search) !== -1;
+             (school) => {
+                 return school.school_name.toLowerCase().indexOf(this.state.search) !== -1;
             });
 
         return (
