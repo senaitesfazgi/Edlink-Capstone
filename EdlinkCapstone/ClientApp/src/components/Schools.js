@@ -6,20 +6,21 @@ export class Schools extends Component {
     static displayName = Schools.name;
 
     constructor(props) {
- 
+        //creating school properties and search properties
         super(props);
         this.state = { schools: [], search:"" };
     }
     componentDidMount() {
-
+        // calling the populate schoool data method to fetch data from the API
         this.populateSchoolsData();
     }
-
+    // this method is called to set the state property search based on the input value
     updateSearch(event) {
         this.setState({ search: event.target.value.substr(0, 20) });
     }
    
     render() {
+        // schools are filtered based upon the search state. 
          let filteredSchools = this.state.schools.filter(
             (school) => {
                 return school.school_name.toLowerCase().indexOf(this.state.search) !== -1;
@@ -43,7 +44,7 @@ export class Schools extends Component {
                     
                     <div className="schools">
                         {
-
+                            //Filtered schools are displayed here
                             filteredSchools.map((school) => {
                                 return (
                                     <div className="school">
@@ -64,9 +65,10 @@ export class Schools extends Component {
         </div>
         );
     }
+    //data is fetched from the API
     async populateSchoolsData() {
         axios.get('https://data.edmonton.ca/resource/nk6t-8jsz.json').then(res => {
-            this.setState({ schools: res.data, search: this.updateSearch.bind(this) });
+            this.setState({ schools: res.data });
         });   
     }
 }
