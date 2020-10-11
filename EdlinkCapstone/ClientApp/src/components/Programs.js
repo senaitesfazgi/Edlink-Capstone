@@ -10,8 +10,7 @@ export class Programs extends Component {
                     <h2 className="Title">PROGRAMS</h2>
                 </div>
                 <form>
-                    <label className="searchBarTitle" htmlfor="firstName">SEARCH:</label>
-                    <input className="searchBarInput" id="firstName" type="text" />
+                    <input className="searchBarInput" placeholder="SEARCH:" id="firstName" type="text" />
                 </form>
             </div>
         );

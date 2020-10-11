@@ -1,151 +1,30 @@
 ﻿/*Mobile First*/
 .title-background {
     background-color: rgb(117, 137, 189);
-    height: 50px;
+    padding: 1px;
     color: white !important;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.Title {
-    margin-left: 60px;
-}
-
-.missionStatement {
     margin-bottom: 20px;
-    margin-top: -370px;
-    margin-left: 60px;
-    font-size: 22px;
 }
 
 .searchBarInput {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border: 7px solid rgb(25, 164, 172);
-    width: 50%;
-}
-
-.searchBarTitle {
-    background-color: rgb(25, 164, 172);
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    text-align: center;
-    color: white !important;
-    font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 18px;
-    width: 25%;
-    height: 43px;
-    margin-left: 60px;
-    padding-top: 8px;
-}
-
-.welcomeBackground {
-    background-color: rgb(145, 172, 209);
-    display: flex;
-    flex-wrap: wrap;
-    width: 75%;
-    margin-left: 60px;
-    margin-top: 120px;
-    text-align: center;
-    border-radius: 50px;
-    border: 6px solid rgb(25, 164, 172);
-}
-
-.welcome {
-    font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 30px;
-    margin-top: 10px;
-    margin-left: 45px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.tour {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 24px;
-    margin-left: 25px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.viewSchools {
-    background-color: rgb(47, 67, 152);
-    font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
-    width: 80%;
-    cursor: pointer;
     border-radius: 20px;
-    margin-top: 15px;
-    margin-left: 20px;
-    text-align: center;
-    color: white !important;
+    border: 7px solid rgb(25, 164, 172);
+    margin-left: 60px;
+    width: 65%;
 }
-
-    .viewSchools:hover {
-        background-color: rgb(252, 177, 74);
-    }
 
 /*For tablet*/
-@media screen and (min-width: 768px) {
-    .title-background {
-        flex: 100%;
-    }
-
+@media (min-width: 500px) {
     .backGround {
         background-color: rgb(154, 216, 222);
+        height: 440px;
     }
 }
 
 /*For desktop*/
-@media screen and (min-width: 1200px) {
-    .title-background {
-        flex: 100%;
-    }
-
+@media (min-width: 1024px) {
     .backGround {
         background-color: rgb(154, 216, 222);
-        height: 430px;
-    }
-
-    .missionStatement {
-        margin-top: -220px;
-        margin-bottom: 100px;
-        font-size: 27px;
-    }
-
-    .searchBarInput {
-        width: 31%;
-    }
-
-    .searchBarTitle {
-        width: 15%;
-    }
-
-    .welcomeBackground {
-        width: 400px;
-        height: 270px;
-        margin-left: 640px;
-        margin-top: 40px;
-    }
-
-    .welcome {
-        margin-top: 30px;
-        margin-left: 120px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .tour {
-        margin-left: 100px;
-        margin-top: -50px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .viewSchools {
-        width: 60%;
+        height: 440px;
     }
 }

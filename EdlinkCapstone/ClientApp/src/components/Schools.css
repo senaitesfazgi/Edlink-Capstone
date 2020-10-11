@@ -1,10 +1,4 @@
 ﻿/*Mobile First*/
-.title-background {
-    background-color: rgb(117, 137, 189);
-    height: 50px;
-    color: white !important;
-}
-
 .school {
     background-color: rgb(145, 172, 209);
     width: 75%;
@@ -13,14 +7,4 @@
     border-radius: 50px;
     border: 6px solid rgb(25, 164, 172);
     text-align: center;
-}
-
-/*For tablet*/
-@media screen and (min-width: 768px) {
-    
-}
-
-/*For desktop*/
-@media screen and (min-width: 1200px) {
-    
 }

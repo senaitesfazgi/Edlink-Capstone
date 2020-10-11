@@ -30,16 +30,15 @@ export class Schools extends Component {
              <div>
             <div>
                 <div className="title-background">
-                    <h2 className="Title">Schools</h2>
+                    <h2 className="Title">SCHOOLS</h2>
                 </div>
                 <form>
-                        <label className="searchBarTitle" htmlfor="firstName">SEARCH:</label>
-                        <input className="searchBarInput" id="firstName" type="text" value={this.state.search}
+                        <input className="searchBarInput" placeholder="SEARCH:" id="firstName" type="text" value={this.state.search}
                             onChange={this.updateSearch.bind(this)} />
                 </form>
                 </div>
                 <div className="App">
-                    <h1>Edmonton Public Schools</h1>
+                    <h2>Edmonton Public Schools Search</h2>
 
                     
                     <div className="schools">
