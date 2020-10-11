@@ -6,10 +6,14 @@
     margin-bottom: 20px;
 }
 
+.title {
+    margin-left: 40px;
+}
+
 .searchBarInput {
     border-radius: 20px;
     border: 7px solid rgb(25, 164, 172);
-    margin-left: 60px;
+    margin-left: 40px;
     width: 65%;
 }
 

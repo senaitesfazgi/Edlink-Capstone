@@ -9,7 +9,7 @@ export class Home extends Component {
         return (
             <div className="backGround">
                 <div className="title-background">
-                    <h2 className="Title">HOME</h2>
+                    <h2 className="title">HOME</h2>
                 </div>
                 <form>
                     <input className="searchBarInput" placeholder="SEARCH:" id="firstName" type="text" />
