@@ -11,14 +11,14 @@ export class Home extends Component {
                 <div className="title-background">
                     <h2 className="title">HOME</h2>
                 </div>
+                <div>
+                    <p className="missionStatement">Make the right choice in your kid's future!</p>
+                </div>
                 <form>
                     <input className="searchBarInput" placeholder="SEARCH:" id="firstName" type="text" />
                 </form>
-                <div>
-                    <h4 className="missionStatement">Make the right choice in your kid's future!</h4>
+                <div className="welcomBackground">
                     <p className="welcome">Welcome</p>
-                </div>
-                <div>
                     <p className="tour">Take a Virtual Tour</p>
                     <Link className="viewSchools" to="/schools"><p>View Schools</p></Link>
                 </div>
