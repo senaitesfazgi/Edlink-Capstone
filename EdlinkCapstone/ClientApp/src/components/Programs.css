@@ -1,16 +1,1 @@
 ﻿/*Mobile First*/
-.title-background {
-    background-color: rgb(117, 137, 189);
-    height: 50px;
-    color: white !important;
-}
-
-/*For tablet*/
-@media screen and (min-width: 768px) {
-    
-}
-
-/*For desktop*/
-@media screen and (min-width: 1200px) {
-    
-}

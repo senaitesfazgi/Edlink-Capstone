@@ -51,7 +51,7 @@ export class CreateStudent extends Component {
         return (
             <div className="backGroundRegistration">
                 <div className="title-background">
-                    <h2 className="Title">REGISTRATION</h2>
+                    <h2 className="title">REGISTRATION</h2>
                 </div>
                 <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
                 <p>Response Data: {JSON.stringify(this.state.response)}</p>
