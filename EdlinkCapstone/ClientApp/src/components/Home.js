@@ -6,12 +6,20 @@ import Footer from './Footer';
 
 export class Home extends Component {
     static displayName = Home.name;
+    constructor(props) {
+        super(props);
+        this.handleSuccessfulAuth = this.handleSuccessfulAuth.bind(this);
+    }
+    handleSuccessfulAuth() {
+        this.props.handleLogin()
+    }
 
     render() {
         return (
             <div className="backGround">
                 <div className="title-background">
                     <h2 className="Title">HOME</h2>
+                    <Link to="/loginPage"><h2 className="Title">{this.props.loggedInStatus}</h2></Link>
                 </div>
                 <div className="welcomeBackground">
                     <p className="welcome">Welcome</p>
