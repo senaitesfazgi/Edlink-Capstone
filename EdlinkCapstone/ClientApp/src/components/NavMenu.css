@@ -1,26 +1,21 @@
 ﻿/*Mobile First*/
 .logo {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 60px;
-}
-
-.logo:hover {
-    background-color: rgb(252, 177, 74);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .text-dark {
     background-color: rgb(25, 164, 172);
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
-    width: 100%;
+    font-size: 14px;
+    width: 260px;
     cursor: pointer;
     border-radius: 20px;
-    margin-top: 15px;
-    margin-left: 70px;
     text-align: center;
     color: white !important;
+    margin: 5px;
 }
 
     .text-dark:hover {
@@ -31,56 +26,68 @@
     background-color: rgb(252, 177, 74);
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
-    width: 100%;
+    font-size: 14px;
+    width: 260px;
     cursor: pointer;
     border-radius: 20px;
-    margin-top: 15px;
-    margin-left: 70px;
     text-align: center;
     color: white !important;
+    margin: 5px;
 }
 
     .login:hover {
         background-color: rgb(25, 164, 172);
     }
 
-html {
-    font-size: 18px;
-}
-
 /*For tablet*/
-@media (min-width: 500px) {
-    .login {
-        margin: 10px;
-        margin-top: 50px;
-        font-size: 12px;
-        width: 100%;
+@media (min-width: 576px) {
+    .logo {
+        width: 60%;
+        margin-left: 55px;
     }
 
     .text-dark {
-        width: 90%;
+        font-size: 8px;
+        width: 80px;
+    }
+
+    .login {
+        font-size: 8px;
+        width: 80px;
+    }
+}
+
+/*For tablet*/
+@media (min-width: 768px) {
+    .logo {
+        width: 70%;
+        margin-left: 55px;
+    }
+    .text-dark {
+        font-size: 12px;
+        width: 110px;
+    }
+
+    .login {
+        font-size: 12px;
+        width: 110px;
     }
 }
 
 /*For desktop*/
-@media (min-width: 960px) {
-    html {
-        font-size: 18px;
-    }
-
+@media (min-width: 1024px) {
     .logo {
-        margin-top: 10px;
-        margin-bottom: 10px;
+        width: 75%;
+        margin-left: 55px;
     }
 
     .text-dark {
-        margin: 20px;
-        width: 90%;
+        font-size: 18px;
+        width: 160px;
     }
 
     .login {
-        margin: 20px;
-        width: 80%;
+        font-size: 18px;
+        width: 160px;
     }
 }

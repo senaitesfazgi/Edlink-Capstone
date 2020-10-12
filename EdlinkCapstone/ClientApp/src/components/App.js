@@ -15,8 +15,16 @@ class App extends Component {
         super(props);
         this.state = {
             loginPage: [],
-            uploadscreen: []
+            uploadscreen: [],
+            loggedInStatus: "LogIn/Register",
+            user: {}
         }
+        this.handleLogin = this.handleLogin.bind(this);
+    }
+    handleLogin() {
+        this.setState({
+            loggedInStatus:"LOGGED_In"
+        })
     }
     componentWillMount() {
         var loginPage = [];
@@ -26,18 +34,21 @@ class App extends Component {
         })
     }
     render() {
-        return (
-            
+        return ( 
             <Layout>
                 <div className="App">
                     <Route path='/loginPage' component={Loginscreen} />
-                    <Route exact path='/' component={Home} />
+                    <Route exact
+                        path='/'
+                        render={props => (
+                            <Home {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />
+                        )}
+                    />
                     <Route path='/programs' component={Programs} />
                     <Route path='/schools' component={Schools} />
                     <Route path='/create-student' component={CreateStudent} />
                 </div>
             </Layout>
-            
         );
     }
 } const style = {
