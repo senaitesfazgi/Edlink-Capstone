@@ -39,14 +39,22 @@
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 34px;
-    text-align: center;
     margin-top: 20px;
 }
 
 .tour {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 22px;
-    text-align: center;
+}
+
+.viewSchoolsButton {
+    background-color: rgb(252, 177, 74);
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 20px;
+    color: white;
 }
 
 .viewSchools {
@@ -54,13 +62,12 @@
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 24px;
-    width: 260px;
     cursor: pointer;
     border-radius: 20px;
-    text-align: center;
+    color: white;
 }
 
-    .viewSchools:hover {
+    .viewSchoolsButton:hover {
         background-color: rgb(252, 177, 74);
         text-decoration: none;
     }
@@ -71,6 +78,11 @@
         background-color: rgb(154, 216, 222);
         height: 430px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .edmontonskyline {
+        float: left;
+        margin-bottom: -400px;
     }
 
     .missionStatement {
@@ -84,14 +96,17 @@
     .welcomeBackground {
         margin-left: 40px;
         width: 85%;
+        z-index: 1;
+        position: relative;
     }
 }
 
 /*For tablet*/
 @media (min-width: 768px) {
-    .welcomeBackground {
-        margin-left: 500px;
-        margin-top: 55px;
+    .missionStatement {
+        font-size: 15px;
+        margin-top: 20px;
+        margin-bottom: 110px;
     }
 
     .column1 {
@@ -100,12 +115,12 @@
         margin-top: 60px;
     }
 
-    .missionStatement {
-        font-size: 20px;
-    }
-
     .searchBarInput {
         width: 87%;
+    }
+
+    .welcome {
+        margin-top: 40px;
     }
 
     .welcomeBackground {
@@ -114,21 +129,20 @@
         border: 6px solid rgb(25, 164, 172);
         width: 40%;
         height: 60%;
-        margin-left: 280px;
+        margin-left: 370px;
         margin-top: 60px;
     }
 }
 
 /*For tablet*/
-@media (min-width: 1024px) {
-    .backGround {
-        background-color: rgb(154, 216, 222);
-        height: 430px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
+@media (min-width: 992px) {
+    .welcomeBackground {
+        margin-left: 490px;
+        margin-top: 55px;
     }
 
     .missionStatement {
-        font-size: 24px;
+        font-size: 20px;
         margin-top: 10px;
         margin-bottom: 100px;
     }
@@ -144,6 +158,25 @@
     .tour {
         font-size: 28px;
     }
+}
+
+/*For tablet*/
+@media (min-width: 1024px) {
+    .backGround {
+        background-color: rgb(154, 216, 222);
+        height: 430px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .missionStatement {
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 100px;
+    }
+
+    .searchBarInput {
+        width: 85%;
+    }
 
     .welcomeBackground {
         margin-left: 490px;
@@ -155,5 +188,11 @@
 @media (min-width: 1200px) {
     .welcomeBackground {
         margin-left: 580px;
+    }
+
+    .missionStatement {
+        font-size: 24px;
+        margin-top: 10px;
+        margin-bottom: 100px;
     }
 }
