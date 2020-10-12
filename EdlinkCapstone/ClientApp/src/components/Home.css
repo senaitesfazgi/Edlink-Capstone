@@ -6,22 +6,6 @@
     margin-bottom: 20px;
 }
 
-/*.title-background {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: rgb(117, 137, 189);
-    height: 50px;
-    color: white !important;
-    margin-bottom: 20px;
-    position: relative;
-    margin-left: -50vw;
-    width: 100vw;
-    left: 50%;
-    border-left: 1rem solid rgb(117, 137, 189);
-    margin-top: 10px;
-    padding-top: 5px;
-    }
-*/
-
 .title {
     margin-left: 40px;
 }
@@ -41,32 +25,132 @@
     margin-top: 5px;
 }
 
+.welcomeBackground {
+    background-color: rgb(145, 172, 209);
+    width: 83%;
+    margin-left: 30px;
+    margin-top: 30px;
+    border-radius: 50px;
+    border: 6px solid rgb(25, 164, 172);
+    text-align: center;
+}
+
+.welcome {
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 34px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tour {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 22px;
+    text-align: center;
+}
+
+.viewSchools {
+    background-color: rgb(252, 177, 74);
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    width: 260px;
+    cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
+}
+
+    .viewSchools:hover {
+        background-color: rgb(252, 177, 74);
+        text-decoration: none;
+    }
+
 /*For tablet*/
 @media (min-width: 576px) {
     .backGround {
         background-color: rgb(154, 216, 222);
         height: 430px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
+    }
+}
+
+/*For tablet*/
+@media (min-width: 768px) {
+    .missionStatement {
+        font-size: 15px;
+        margin-top: 30px;
+        margin-bottom: 90px;
+    }
+
+    .searchBarInput {
+        width: 87%;
+    }
+
+    .column1 {
+        float: left;
+        width: 50%;
+        margin-top: 60px;
+    }
+
+    .welcomeBackground {
+        background-color: rgb(145, 172, 209);
+        border-radius: 50px;
+        border: 6px solid rgb(25, 164, 172);
+        width: 40%;
+        height: 60%;
+        margin-left: 380px;
+        margin-top: 60px;
+    }
+}
+
+/*For tablet*/
+@media (min-width: 994px) {
+    .welcomeBackground {
+        margin-left: 500px;
+        margin-top: 55px;
+    }
+}
+
+/*For tablet*/
+@media (min-width: 1024px) {
+    .welcomeBackground {
+        margin-left: 500px;
+        margin-top: 55px;
+    }
+
+    .missionStatement {
+        font-size: 20px;
     }
 }
 
 /*For desktop*/
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
     .backGround {
         background-color: rgb(154, 216, 222);
         height: 430px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
     }
 
     .missionStatement {
         font-size: 24px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 10px;
+        margin-bottom: 100px;
     }
 
     .searchBarInput {
-        width: 42%;
+        width: 85%;
     }
 
-    .welcomBackground {
-        margin-left: 800px;
+    .welcome {
+        font-size: 42px;
+    }
+
+    .tour {
+        font-size: 28px;
+    }
+
+    .welcomeBackground {
+        margin-left: 580px;
+        margin-top: 55px;
     }
 }

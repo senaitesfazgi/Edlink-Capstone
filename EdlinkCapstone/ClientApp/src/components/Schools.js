@@ -32,7 +32,7 @@ export class Schools extends Component {
                     <div className="title-background">
                         <h2 className="title">SCHOOLS</h2>
                     </div>
-                    <p>Search For Edmonton Public Schools</p>
+                    <p className="search-ed-pub">Search For Edmonton Public Schools:</p>
                     <form>
                         <input className="searchBarInput" placeholder="SEARCH:" id="firstName" type="text" value={this.state.search}
                             onChange={this.updateSearch.bind(this)} />
