@@ -11,6 +11,11 @@ export class Home extends Component {
                 <div className="title-background">
                     <h2 className="title">HOME</h2>
                 </div>
+                <div className="edmontonskyline">
+                    <Link to="/">
+                        <img alt="BackGroundImage" src={require('../Images/EdmontonSkyline.png')} />
+                    </Link>
+                </div>
                 <div className="column1">
                     <p className="missionStatement">Make the right choice in your kid's future!</p>
                     <form>
@@ -20,7 +25,7 @@ export class Home extends Component {
                 <div className="welcomeBackground">
                     <p className="welcome">Welcome</p>
                     <p className="tour">Take a Virtual Tour</p>
-                    <Link className="viewSchools" to="/schools"><p>View Schools</p></Link>
+                    <Link className="viewSchoolsButton" to="/schools"><p>View Schools</p></Link>
                 </div>
             </div>
         );
