@@ -78,11 +78,7 @@
         background-color: rgb(154, 216, 222);
         height: 430px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
-    }
-
-    .edmontonskyline {
-        float: left;
-        margin-bottom: -400px;
+        background-image: url('../Images/EdmontonSkyline.png');
     }
 
     .missionStatement {
@@ -124,9 +120,6 @@
     }
 
     .welcomeBackground {
-        background-color: rgb(145, 172, 209);
-        border-radius: 50px;
-        border: 6px solid rgb(25, 164, 172);
         width: 40%;
         height: 60%;
         margin-left: 370px;
@@ -162,12 +155,6 @@
 
 /*For tablet*/
 @media (min-width: 1024px) {
-    .backGround {
-        background-color: rgb(154, 216, 222);
-        height: 430px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
-    }
-
     .missionStatement {
         font-size: 20px;
         margin-top: 10px;

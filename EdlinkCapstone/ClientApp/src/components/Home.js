@@ -11,11 +11,6 @@ export class Home extends Component {
                 <div className="title-background">
                     <h2 className="title">HOME</h2>
                 </div>
-                <div className="edmontonskyline">
-                    <Link to="/">
-                        <img alt="BackGroundImage" src={require('../Images/EdmontonSkyline.png')} />
-                    </Link>
-                </div>
                 <div className="column1">
                     <p className="missionStatement">Make the right choice in your kid's future!</p>
                     <form>
