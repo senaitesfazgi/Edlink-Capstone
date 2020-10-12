@@ -16,7 +16,7 @@ export class NavMenu extends Component {
                 <Navbar className="navbar-expand-sm" light>
                     <Container className="navbar-nav">
                         <Link to="/">
-                            <img className="logo" alt="EdLink" src={require('../Images/EdLinkLogo.png')} />
+                            <img className="logo" alt="EdLink" title="HOME" src={require('../Images/EdLinkLogo.png')} />
                         </Link>
                             <NavItem>
                                 <NavLink tag={Link} className="text-dark" to="/schools">SCHOOLS</NavLink>
