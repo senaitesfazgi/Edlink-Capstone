@@ -109,6 +109,10 @@
         margin-left: 500px;
         margin-top: 55px;
     }
+
+    .missionStatement {
+        font-size: 20px;
+    }
 }
 
 /*For tablet*/
