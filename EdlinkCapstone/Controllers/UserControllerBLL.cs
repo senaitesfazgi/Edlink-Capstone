@@ -15,32 +15,40 @@ namespace EdlinkCapstone.Controllers
 
         public User LogIn(string email, string passWord)
         {
-            UserValidationException exception = new UserValidationException();
-            if (string.IsNullOrWhiteSpace(email))
-            {
-                exception.SubExceptions.Add(new ArgumentNullException(nameof(email), "Email was not provided."));
-            }
-            else
-            {
-                email = email.Trim();
-            }
-            if (string.IsNullOrWhiteSpace(passWord))
-            {
-                exception.SubExceptions.Add(new ArgumentNullException(nameof(passWord), "PassWord was not provided."));
-            }
-            else
-            {
-                passWord = passWord.Trim();
-            }
-            if (exception.SubExceptions.Count > 0)
-            {
-                throw exception;
-            }
             using (UserContext context = new UserContext())
             {
-                var authUser = (context.Users.Where(x => x.Email == email && x.PassWord == passWord)).Single();
-                return authUser;
-            }
+                UserValidationException exception = new UserValidationException();
+                if (string.IsNullOrWhiteSpace(email))
+                {
+                    exception.SubExceptions.Add(new ArgumentNullException(nameof(email), "Email was not provided."));
+                }
+                else if(context.Users.Where(x => x.Email == email).Count() != 1)
+                {
+                    exception.SubExceptions.Add(new InvalidOperationException("Email was not found"));
+                }
+                else
+                {
+                    email = email.Trim();
+                }
+                if (string.IsNullOrWhiteSpace(passWord))
+                {
+                    exception.SubExceptions.Add(new ArgumentNullException(nameof(passWord), "PassWord was not provided."));
+                }
+                else if (context.Users.Where(x => x.Email == email && x.PassWord == passWord).Count() != 1)
+                {
+                    exception.SubExceptions.Add(new InvalidOperationException("Email or Password is mismatched"));
+                }
+                else
+                {
+                    passWord = passWord.Trim();
+                }
+                if (exception.SubExceptions.Count > 0)
+                {
+                    throw exception;
+                }
+                    var authUser = (context.Users.Where(x => x.Email == email && x.PassWord == passWord)).Single();
+                    return authUser;
+                }
         }
         public int RegisterUser(string firstName, string lastName, string email, string passWord)
         {

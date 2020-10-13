@@ -19,14 +19,15 @@ namespace EdlinkCapstone.Controllers
             ActionResult<User> response;
 
             // We aren't concerned with validation here. Only in BLL.
-            authUser = new UserControllerBLL().LogIn(email, passWord);
-            if (authUser != null)
+            try
             {
+                authUser = new UserControllerBLL().LogIn(email, passWord);
                 response = Ok(new { message = "User successfully logged in" });
-            } 
-            else
+
+            }
+            catch (UserValidationException e)
             {
-                response = BadRequest(new { message = "Username or password is incorrect" });
+                response = UnprocessableEntity(new { errors = e.SubExceptions.Select(x => x.Message) });
             }
 
             return response;
@@ -48,6 +49,7 @@ namespace EdlinkCapstone.Controllers
             {
                 response = UnprocessableEntity(new { errors = e.SubExceptions.Select(x => x.Message) });
             }
+
             // Return the response.
             return response;
         }
