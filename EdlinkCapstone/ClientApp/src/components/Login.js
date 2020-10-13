@@ -1,9 +1,7 @@
 ﻿import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import Uploadscreen from './Uploadscreen';
 import axios from 'axios';
 import { Home } from './Home';
 class Login extends Component {
@@ -20,7 +18,7 @@ class Login extends Component {
     handleClick(event) {
         event.preventDefault();
         this.setState({ waiting: true })
-        
+
         axios({
             method: 'post',
             url: 'https://localhost:44380/API/UserAPI/authUser',
@@ -64,9 +62,9 @@ class Login extends Component {
             <div>
                 <MuiThemeProvider>
                     <div>
-                        <AppBar
-                            title="Login"
-                        />
+                        <div className="title-background">
+                            <h2 className="title">LOGIN</h2>
+                        </div>
                         <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
                         <p>Response Data: {JSON.stringify(this.state.response)}</p>
                         <TextField

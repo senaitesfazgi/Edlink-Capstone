@@ -1,12 +1,21 @@
 ﻿/*Mobile First*/
 .school {
     background-color: rgb(145, 172, 209);
-    width: 75%;
-    margin-left: 60px;
-    margin-top: 120px;
-    border-radius: 50px;
-    border: 6px solid rgb(25, 164, 172);
+    width: 78%;
+    margin-left: 40px;
+    margin-top: 20px;
+    border-radius: 35px;
+    border: 6px solid rgb(25, 130, 130);
     text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.searchBarInputSchools {
+    border-radius: 20px;
+    border: 5px solid rgb(25, 130, 130);
+    margin-left: 40px;
+    width: 78%;
+    margin-top: 5px;
 }
 
 .search-ed-pub {
@@ -16,9 +25,27 @@
     font-size: 22px;
 }
 
+.schoolName {
+    margin-top: 20px;
+}
+
 /*For desktop*/
 @media (min-width: 1024px) {
+    .school {
+        width: 20%;
+        float: left;
+        height: 215px;
+    }
+
     .search-ed-pub {
         font-size: 26px;
+    }
+
+    .searchBarInputSchools {
+        border-radius: 20px;
+        border: 5px solid rgb(25, 130, 130);
+        margin-left: 40px;
+        width: 42%;
+        margin-top: 5px;
     }
 }
