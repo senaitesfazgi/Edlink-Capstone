@@ -172,7 +172,7 @@
     }
 }
 
-/*For tablet*/
+/*For desktop*/
 @media (min-width: 1200px) {
     .welcomeBackground {
         margin-left: 580px;

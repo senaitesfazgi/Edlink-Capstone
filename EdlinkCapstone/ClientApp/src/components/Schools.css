@@ -29,11 +29,11 @@
     margin-top: 20px;
 }
 
-/*For desktop*/
-@media (min-width: 1024px) {
+/*For tablet*/
+@media (min-width: 576px) {
     .school {
-        width: 20%;
-        height: 215px;
+        width: 50%;
+        height: auto;
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -48,14 +48,50 @@
         }
 
     .search-ed-pub {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .searchBarInputSchools {
         border-radius: 20px;
         border: 5px solid rgb(25, 130, 130);
         margin-left: 40px;
-        width: 42%;
+        width: 84%;
         margin-top: 5px;
+    }
+}
+
+/*For tablet*/
+@media (min-width: 768px) {
+    .school {
+        width: 40%;
+    }
+
+    .search-ed-pub {
+        font-size: 22px;
+    }
+
+    .searchBarInputSchools {
+        width: 58%;
+    }
+}
+
+/*For tablet*/
+@media (min-width: 992px) {
+    .search-ed-pub {
+        font-size: 30px;
+    }
+}
+
+/*For tablet*/
+@media (min-width: 1024px) {
+    .search-ed-pub {
+        font-size: 30px;
+    }
+}
+
+/*For desktop*/
+@media (min-width: 1200px) {
+    .searchBarInputSchools {
+        width: 48%;
     }
 }
