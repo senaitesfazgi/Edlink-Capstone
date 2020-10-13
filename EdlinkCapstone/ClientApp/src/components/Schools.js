@@ -34,7 +34,7 @@ export class Schools extends Component {
                     </div>
                     <p className="search-ed-pub">Search For Edmonton Public Schools:</p>
                     <form>
-                        <input className="searchBarInput" placeholder="SEARCH:" id="firstName" type="text" value={this.state.search}
+                        <input className="searchBarInputSchools" placeholder="SEARCH:" id="firstName" type="text" value={this.state.search}
                             onChange={this.updateSearch.bind(this)} />
                     </form>
                 </div>
@@ -46,7 +46,7 @@ export class Schools extends Component {
                                 return (
                                     <div className="school">
 
-                                        <h2>{school.school_name}</h2>
+                                        <h5 className="schoolName">{school.school_name}</h5>
 
                                         <div className="details">
                                             <p>{school.address}</p>

@@ -2,7 +2,6 @@
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import Uploadscreen from './Uploadscreen';
 import axios from 'axios';
 import { Home } from './Home';
 class Login extends Component {

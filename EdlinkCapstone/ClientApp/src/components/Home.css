@@ -23,6 +23,7 @@
     margin-left: 40px;
     width: 78%;
     margin-top: 5px;
+    box-shadow: 0 8px 24px rgba(255,255,255,0.3), 0 8px 20px rgba(255,255,255,0.5);
 }
 
 .welcomeBackground {
