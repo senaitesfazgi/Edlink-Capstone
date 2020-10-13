@@ -33,9 +33,19 @@
 @media (min-width: 1024px) {
     .school {
         width: 20%;
-        float: left;
         height: 215px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
+
+    .schools {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+        .schools > * {
+            flex: 20%;
+        }
 
     .search-ed-pub {
         font-size: 26px;
