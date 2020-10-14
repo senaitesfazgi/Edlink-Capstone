@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './Programs.css';
 import programs from './Programs.json'
 
@@ -7,7 +6,7 @@ export class Programs extends Component {
     static displayName = Programs.name;
 
     constructor(props) {
-        //creating school properties and search properties
+        //creating program properties and search properties
         super(props);
         this.state = { search: "" };
     }
@@ -17,7 +16,7 @@ export class Programs extends Component {
     }
 
     render() {
-        // schools are filtered based upon the search state. 
+        // programs are filtered based upon the search state. 
         let filteredPrograms = programs.programs.filter(
             (program) => {
                 return program.programName.toLowerCase().indexOf(this.state.search) !== -1;
@@ -35,32 +34,29 @@ export class Programs extends Component {
                             onChange={this.updateSearch.bind(this)} />
                     </form>
                 </div>
-                <div className="App">
-                    <div className="programs">
-                        {
-                            //Filtered schools are displayed here
-                            filteredPrograms.map((program) => {
-                                return (
-                                    <div className="program">
+                <div className="programs">
+                    {
+                        //Filtered programs are displayed here
+                        filteredPrograms.map((program) => {
+                            return (
+                                <div className="program">
 
-                                        <h2>{program.programName}</h2>
+                                    <h5 className="programName">{program.programName}</h5>
 
-                                        <div className="details">
-                                            <p>{program.address}</p>
-                                            <p>{program.schoolwebsite}</p>
-                                            <p>{program.school_phone}</p>
-                                            <p>{program.school_email}</p>
-                                        </div>
+                                    <div className="details">
+                                        <p>{program.address}</p>
+                                        <p>{program.schoolwebsite}</p>
+                                        <p>{program.school_phone}</p>
+                                        <p>{program.school_email}</p>
                                     </div>
-                                );
-                            })}
-                    </div>
+                                </div>
+                            );
+                        })}
                 </div>
             </div>
         );
     }
-
-    }
+}
 
 
 

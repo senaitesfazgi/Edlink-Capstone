@@ -2,7 +2,16 @@
 .logo {
     margin-top: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
+    -webkit-filter: initial;
+    -moz-filter: initial;
 }
+
+    .logo:hover {
+        text-decoration-color: black;
+        text-emphasis-color: black;
+    }
+
 
 .text-dark {
     background-color: rgb(25, 164, 172);
