@@ -82,16 +82,13 @@
     }
 }
 
-/*For tablet*/
-@media (min-width: 1024px) {
-    .search-ed-pub {
-        font-size: 30px;
-    }
-}
-
 /*For desktop*/
 @media (min-width: 1200px) {
+    .search-ed-pub {
+        font-size: 27px;
+    }
+
     .searchBarInputSchools {
-        width: 48%;
+        width: 43%;
     }
 }
