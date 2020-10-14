@@ -65,8 +65,10 @@ class Login extends Component {
                         <div className="title-background">
                             <h2 className="title">LOGIN</h2>
                         </div>
-                        <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
-                        <p>Response Data: {JSON.stringify(this.state.response)}</p>
+                        <div className="responseData">
+                            <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
+                            <p>Response Data: {JSON.stringify(this.state.response)}</p>
+                        </div>
                         <TextField
                             hintText="Enter your Username"
                             floatingLabelText="Email"

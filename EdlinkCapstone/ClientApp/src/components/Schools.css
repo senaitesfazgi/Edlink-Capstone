@@ -41,6 +41,7 @@
     .schools {
         display: flex;
         flex-wrap: wrap;
+        clear: right;
     }
 
         .schools > * {
@@ -67,18 +68,26 @@
     }
 
     .search-ed-pub {
-        font-size: 22px;
+        font-size: 16px;
     }
 
     .searchBarInputSchools {
-        width: 58%;
+        width: 48%;
+        float: right;
+        margin-top: -45px;
+        margin-right: 20px;
     }
 }
 
 /*For tablet*/
 @media (min-width: 992px) {
     .search-ed-pub {
-        font-size: 30px;
+        font-size: 22px;
+    }
+
+    .searchBarInputSchools {
+        width: 50%;
+        margin-top: -50px;
     }
 }
 
@@ -89,6 +98,7 @@
     }
 
     .searchBarInputSchools {
-        width: 43%;
+        width: 50%;
+        margin-top: -55px;
     }
 }

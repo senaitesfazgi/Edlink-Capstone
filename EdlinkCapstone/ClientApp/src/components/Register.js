@@ -9,7 +9,7 @@ class Register extends Component {
         super(props);
         this.state = {
             statusCode: 0,
-            response:[],
+            response: [],
             firstName: '',
             lastName: '',
             email: '',
@@ -17,7 +17,7 @@ class Register extends Component {
         }
     }
     handleClick(event) {
-    this.setState({ waiting: true })
+        this.setState({ waiting: true })
 
         axios({
             method: 'post',
@@ -38,7 +38,7 @@ class Register extends Component {
                     var loginmessage = [];
                     loginscreen.push(<Login />);
                     this.props.parentContext.setState({
-                       loginscreen: loginscreen,
+                        loginscreen: loginscreen,
                         loginmessage: loginmessage,
                         buttonLabel: "Register",
                         isLogin: true
@@ -58,8 +58,10 @@ class Register extends Component {
                         <div className="title-background">
                             <h2 className="title">REGISTER</h2>
                         </div>
-                        <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
-                        <p>Response Data: {JSON.stringify(this.state.response)}</p>
+                        <div className="responseData">
+                            <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
+                            <p>Response Data: {JSON.stringify(this.state.response)}</p>
+                        </div>
                         <TextField
                             hintText="Enter your First Name"
                             floatingLabelText="First Name"

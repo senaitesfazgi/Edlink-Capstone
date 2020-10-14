@@ -53,8 +53,10 @@ export class CreateStudent extends Component {
                 <div className="title-background">
                     <h2 className="title">REGISTRATION</h2>
                 </div>
-                <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
-                <p>Response Data: {JSON.stringify(this.state.response)}</p>
+                <div className="responseData">
+                    <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
+                    <p>Response Data: {JSON.stringify(this.state.response)}</p>
+                </div>
                 <form className="studentDetails" onSubmit={this.handleSubmit}>
                     <div className="columnCS1">
                         <label className="textLabel" htmlfor="firstName">FIRST NAME:</label>
