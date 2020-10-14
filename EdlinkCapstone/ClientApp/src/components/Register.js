@@ -1,11 +1,9 @@
 ﻿import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import Login from './Login'
 import axios from 'axios';
-import Uploadscreen from './Uploadscreen';
 class Register extends Component {
     constructor(props) {
         super(props);
@@ -57,9 +55,9 @@ class Register extends Component {
             <div>
                 <MuiThemeProvider>
                     <div>
-                        <AppBar
-                            title="Register"
-                        />
+                        <div className="title-background">
+                            <h2 className="title">REGISTER</h2>
+                        </div>
                         <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
                         <p>Response Data: {JSON.stringify(this.state.response)}</p>
                         <TextField

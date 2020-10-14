@@ -38,26 +38,24 @@ export class Schools extends Component {
                             onChange={this.updateSearch.bind(this)} />
                     </form>
                 </div>
-                <div className="App">
-                    <div className="schools">
-                        {
-                            //Filtered schools are displayed here
-                            filteredSchools.map((school) => {
-                                return (
-                                    <div className="school">
+                <div className="schools">
+                    {
+                        //Filtered schools are displayed here
+                        filteredSchools.map((school) => {
+                            return (
+                                <div className="school">
 
-                                        <h5 className="schoolName">{school.school_name}</h5>
+                                    <h5 className="schoolName">{school.school_name}</h5>
 
-                                        <div className="details">
-                                            <p>{school.address}</p>
-                                            <p>{school.schoolwebsite}</p>
-                                            <p>{school.school_phone}</p>
-                                            <p>{school.school_email}</p>
-                                        </div>
+                                    <div className="details">
+                                        <p>{school.address}</p>
+                                        <p>{school.schoolwebsite}</p>
+                                        <p>{school.school_phone}</p>
+                                        <p>{school.school_email}</p>
                                     </div>
-                                );
-                            })}
-                    </div>
+                                </div>
+                            );
+                        })}
                 </div>
             </div>
         );
