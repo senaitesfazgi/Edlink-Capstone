@@ -26,7 +26,7 @@ namespace EdlinkCapstone.Controllers
             }
             catch (StudentValidationException e)
             {
-                response = UnprocessableEntity(new { errors = e.SubExceptions.Select(x => x.Message) });
+                response = StatusCode(400, (new { errors = e.SubExceptions.Select(x => x.Message) }));
             }
             // Return the response.
             return response;
