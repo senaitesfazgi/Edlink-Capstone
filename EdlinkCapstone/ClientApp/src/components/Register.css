@@ -1,2 +1,8 @@
-﻿body {
+﻿.responseState {
+    display: none;
+}
+
+.responseData {
+    margin-left: 40px;
+    color: red;
 }

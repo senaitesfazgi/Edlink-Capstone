@@ -8,8 +8,13 @@
     background-position-y: 205px;
 }
 
+.responseState{
+    display: none;
+}
+
 .responseData {
     margin-left: 40px;
+    color: red;
 }
 
 .Title {

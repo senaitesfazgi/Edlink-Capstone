@@ -22,37 +22,37 @@ namespace EdlinkCapstone.Controllers
                 StudentValidationException exception = new StudentValidationException();
                 if (string.IsNullOrWhiteSpace(firstName))
                 {
-                    exception.SubExceptions.Add(new ArgumentNullException(nameof(firstName), "First name was not provided."));
+                    exception.SubExceptions.Add(new ArgumentNullException("First name was not provided."));
                 }
                 else
                 {
                     if (firstName.Any(x => char.IsDigit(x)))
                     {
-                        exception.SubExceptions.Add(new ArgumentException(nameof(firstName), "First name cannot contain numbers."));
+                        exception.SubExceptions.Add(new ArgumentException("First name cannot contain numbers."));
                     }
                     if (firstName.Length > 50)
                     {
-                        exception.SubExceptions.Add(new ArgumentOutOfRangeException(nameof(firstName), "First name cannot be more than 50 characters long."));
+                        exception.SubExceptions.Add(new ArgumentOutOfRangeException("First name cannot be more than 50 characters long."));
                     }
                 }
                 if (string.IsNullOrWhiteSpace(lastName))
                 {
-                    exception.SubExceptions.Add(new ArgumentNullException(nameof(lastName), "Last name was not provided."));
+                    exception.SubExceptions.Add(new ArgumentNullException("Last name was not provided."));
                 }
                 else
                 {
                     if (lastName.Any(x => char.IsDigit(x)))
                     {
-                        exception.SubExceptions.Add(new ArgumentException(nameof(lastName), "Last name cannot contain numbers."));
+                        exception.SubExceptions.Add(new ArgumentException("Last name cannot contain numbers."));
                     }
                     if (lastName.Length > 50)
                     {
-                        exception.SubExceptions.Add(new ArgumentOutOfRangeException(nameof(lastName), "Last name cannot be more than 50 characters long."));
+                        exception.SubExceptions.Add(new ArgumentOutOfRangeException("Last name cannot be more than 50 characters long."));
                     }
                 }
                 if (string.IsNullOrWhiteSpace(address))
                 {
-                    exception.SubExceptions.Add(new ArgumentNullException(nameof(address), "Address was not provided."));
+                    exception.SubExceptions.Add(new ArgumentNullException("Address was not provided."));
                 }
                 else
                 {
@@ -60,7 +60,7 @@ namespace EdlinkCapstone.Controllers
                 }
                 if (string.IsNullOrWhiteSpace(email))
                 {
-                    exception.SubExceptions.Add(new ArgumentNullException(nameof(email), "Email was not provided."));
+                    exception.SubExceptions.Add(new ArgumentNullException("Email was not provided."));
                 }
                 else if(context.Students.Where(x => x.Email == email).Count() != 1)
                 {
@@ -72,11 +72,11 @@ namespace EdlinkCapstone.Controllers
                 }
                 if (string.IsNullOrWhiteSpace(phoneNumber))
                 {
-                    exception.SubExceptions.Add(new ArgumentNullException(nameof(phoneNumber), "Phone Number was not provided."));
+                    exception.SubExceptions.Add(new ArgumentNullException("Phone Number was not provided."));
                 }
                 if (dateOfBirth.Equals(null))
                 {
-                    exception.SubExceptions.Add(new ArgumentNullException(nameof(dateOfBirth), "Date of Birth was not provided."));
+                    exception.SubExceptions.Add(new ArgumentNullException("Date of Birth was not provided."));
                 }
                 else
                 {
@@ -93,7 +93,7 @@ namespace EdlinkCapstone.Controllers
                         int.TryParse(phoneParts[2], out temp)
                         ))
                     {
-                        exception.SubExceptions.Add(new ArgumentException(nameof(phoneNumber), "Phone Number number was not in a valid format."));
+                        exception.SubExceptions.Add(new ArgumentException("Phone Number number was not in a valid format."));
                     }
                 }
                 if (exception.SubExceptions.Count > 0)

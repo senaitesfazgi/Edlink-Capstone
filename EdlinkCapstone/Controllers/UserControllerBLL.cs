@@ -20,7 +20,7 @@ namespace EdlinkCapstone.Controllers
                 UserValidationException exception = new UserValidationException();
                 if (string.IsNullOrWhiteSpace(email))
                 {
-                    exception.SubExceptions.Add(new ArgumentNullException(nameof(email), "Email was not provided."));
+                    exception.SubExceptions.Add(new ArgumentNullException("Email was not provided."));
                 }
                 else if(context.Users.Where(x => x.Email == email).Count() != 1)
                 {
@@ -32,7 +32,7 @@ namespace EdlinkCapstone.Controllers
                 }
                 if (string.IsNullOrWhiteSpace(passWord))
                 {
-                    exception.SubExceptions.Add(new ArgumentNullException(nameof(passWord), "PassWord was not provided."));
+                    exception.SubExceptions.Add(new ArgumentNullException("PassWord was not provided."));
                 }
                 else if (context.Users.Where(x => x.Email == email && x.PassWord == passWord).Count() != 1)
                 {
@@ -56,37 +56,37 @@ namespace EdlinkCapstone.Controllers
             UserValidationException exception = new UserValidationException();
             if (string.IsNullOrWhiteSpace(firstName))
             {
-                exception.SubExceptions.Add(new ArgumentNullException(nameof(firstName), "First name was not provided."));
+                exception.SubExceptions.Add(new ArgumentNullException("First name was not provided."));
             }
             else
             {
                 if (firstName.Any(x => char.IsDigit(x)))
                 {
-                    exception.SubExceptions.Add(new ArgumentException(nameof(firstName), "First name cannot contain numbers."));
+                    exception.SubExceptions.Add(new ArgumentException("First name cannot contain numbers."));
                 }
                 if (firstName.Length > 50)
                 {
-                    exception.SubExceptions.Add(new ArgumentOutOfRangeException(nameof(firstName), "First name cannot be more than 50 characters long."));
+                    exception.SubExceptions.Add(new ArgumentOutOfRangeException("First name cannot be more than 50 characters long."));
                 }
             }
             if (string.IsNullOrWhiteSpace(lastName))
             {
-                exception.SubExceptions.Add(new ArgumentNullException(nameof(lastName), "Last name was not provided."));
+                exception.SubExceptions.Add(new ArgumentNullException("Last name was not provided."));
             }
             else
             {
                 if (lastName.Any(x => char.IsDigit(x)))
                 {
-                    exception.SubExceptions.Add(new ArgumentException(nameof(lastName), "Last name cannot contain numbers."));
+                    exception.SubExceptions.Add(new ArgumentException("Last name cannot contain numbers."));
                 }
                 if (lastName.Length > 50)
                 {
-                    exception.SubExceptions.Add(new ArgumentOutOfRangeException(nameof(lastName), "Last name cannot be more than 50 characters long."));
+                    exception.SubExceptions.Add(new ArgumentOutOfRangeException("Last name cannot be more than 50 characters long."));
                 }
             }
             if (string.IsNullOrWhiteSpace(email))
             {
-                exception.SubExceptions.Add(new ArgumentNullException(nameof(email), "Email was not provided."));
+                exception.SubExceptions.Add(new ArgumentNullException("Email was not provided."));
             }
             else
             {
@@ -94,7 +94,7 @@ namespace EdlinkCapstone.Controllers
             }
             if (string.IsNullOrWhiteSpace(passWord))
             {
-                exception.SubExceptions.Add(new ArgumentNullException(nameof(passWord), "PassWord was not provided."));
+                exception.SubExceptions.Add(new ArgumentNullException("PassWord was not provided."));
             }
             else
             {

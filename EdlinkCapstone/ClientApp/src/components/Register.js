@@ -58,9 +58,11 @@ class Register extends Component {
                         <div className="title-background">
                             <h2 className="title">REGISTER</h2>
                         </div>
-                        <div className="responseData">
+                        <div className="responseState">
                             <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
-                            <p>Response Data: {JSON.stringify(this.state.response)}</p>
+                        </div>
+                        <div className="responseData">
+                            <p>{JSON.stringify(this.state.response)}</p>
                         </div>
                         <TextField
                             hintText="Enter your First Name"
