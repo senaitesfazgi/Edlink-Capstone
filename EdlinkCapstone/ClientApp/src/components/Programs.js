@@ -31,7 +31,7 @@ export class Programs extends Component {
                     </div>
                     <p className="search-ed-pub">Search For Programs In Each School:</p>
                     <form>
-                        <input className="searchBarInput" placeholder="SEARCH:" id="firstName" type="text" value={this.state.search}
+                        <input className="searchBarInputPrograms" placeholder="SEARCH:" id="firstName" type="text" value={this.state.search}
                             onChange={this.updateSearch.bind(this)} />
                     </form>
                 </div>

@@ -1,17 +1,26 @@
 ﻿/*Mobile First*/
-.login {
-    background-color: rgb(252, 177, 74);
-    font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 14px;
-    width: 260px;
-    cursor: pointer;
-    border-radius: 20px;
-    text-align: center;
-    color: white !important;
-    margin: 5px;
+.backGroundLogin {
+    background-color: rgb(154, 216, 222);
+    height: 325px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
 }
 
-    .login:hover {
-        background-color: rgb(25, 164, 172);
-    }
+.username {
+    border-radius: 20px;
+    width: 78%;
+    margin-left: 40px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.password {
+    border-radius: 20px;
+    width: 78%;
+    margin-left: 40px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.buttonLogin {
+    margin-left: 40px;
+}

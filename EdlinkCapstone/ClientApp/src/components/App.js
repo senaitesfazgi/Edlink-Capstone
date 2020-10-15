@@ -9,7 +9,6 @@ import { CreateStudent } from './CreateStudent';
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 import Loginscreen from './Loginscreen';
-import Uploadscreen from './Uploadscreen';
 class App extends Component {
     constructor(props) {
         super(props);
