@@ -34,3 +34,13 @@
     margin: 5px;
     margin-left: 40px;
 }
+
+.responseStatus{
+    display: none;
+    color: red;
+}
+
+.responseData{
+    color:red;
+    margin-left: 40px;
+}

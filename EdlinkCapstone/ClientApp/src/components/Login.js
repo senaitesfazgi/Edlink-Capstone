@@ -67,9 +67,11 @@ class Login extends Component {
                             <h2 className="title">LOGIN</h2>
                         </div>
                         <div className="backGroundLogin">
-                            <div className="responseData">
+                            <div className="responseStatus">
                                 <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
-                                <p>Response Data: {JSON.stringify(this.state.response)}</p>
+                            </div>
+                            <div className="responseData">
+                                <p>{JSON.stringify(this.state.response)}</p>
                             </div>
                             <input className="username"
                                 placeholder="Enter your Username or Email:"

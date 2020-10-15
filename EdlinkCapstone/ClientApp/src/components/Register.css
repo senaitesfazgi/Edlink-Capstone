@@ -28,3 +28,13 @@
     margin-right: 30px;
     margin-bottom: 30px;
 }
+
+.responseStatus {
+    display: none;
+    color: red;
+}
+
+.responseData {
+    color: red;
+    margin-left: 40px;
+}
