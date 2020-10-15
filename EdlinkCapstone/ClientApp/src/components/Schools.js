@@ -1,4 +1,5 @@
 ﻿import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Schools.css';
 
@@ -52,6 +53,7 @@ export class Schools extends Component {
                                         <p>{school.schoolwebsite}</p>
                                         <p>{school.school_phone}</p>
                                         <p>{school.school_email}</p>
+                                        <Link to="/create-student">Register at {school.school_name} </Link>
                                     </div>
                                 </div>
                             );
