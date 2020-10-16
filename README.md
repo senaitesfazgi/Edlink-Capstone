@@ -6,10 +6,20 @@ EDLINK is an Edmonton Grade schools search website that allows user to search fo
 This website is created using:
 
 Front End
-●	REACT
-●	HTML5 
-●	CSS3
-●	JavaScript including ES6
+*	REACT
+*	HTML5 
+*	CSS3
+*	JavaScript including ES6
+
+Back End/Server
+*	Entity Framework
+*	C-Sharp
+*	ASP.Net
+*	MVC web application (.net core Framework)
+
+DataBase
+*	MySQL
+*	API Data
 
 
 ## Team Members
