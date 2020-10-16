@@ -25,10 +25,10 @@ https://trello.com/b/FY3k0O7v/edlink-capstone-project
 * Got to github link "https://github.com/TECHCareers-by-Manpower/capstone-project-dams". Copy the link.
 * Write following git commands: 
     * `git clone https://github.com/TECHCareers-by-Manpower/capstone-project-dams.git`
-    * `code .`  (this will open the project in VS code)
-* Open terminal inside VS Code( CTRL + ` )
+    * `Double click on EdlinkCapstone.sln file inside the capstone-project-dams folder to open the project in Microsoft Visual Studio Community`
+* Open Visual Studio Package Manager Console Window (To access Package Manager Console in Visual Studio: go to Tools menu > NuGet Package Manager > Package Manager Console)
 
-### Type the following commands in Visual Studio Package Manager Console (To access Package Manager Console in Visual Studio: go to Tools menu > NuGet Package Manager > Package Manager Console)
+### Type the following commands
 * `dotnet add package Microsoft.EntityFrameworkCore.Design`
 * `dotnet add package Pomelo.EntityFrameworkCore.MySql`
 * `dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
