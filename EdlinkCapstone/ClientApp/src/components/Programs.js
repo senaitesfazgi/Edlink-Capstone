@@ -40,11 +40,8 @@ export class Programs extends Component {
                         //Filtered programs are displayed here
                         filteredPrograms.map((program) => {
                             return (
-
-                             
                                 <div className="program">
                                     <h5 className="programName">{program.programName}</h5>
-
                                     <div className="details">
                                         <p>{program.address}</p>
                                         <p>{program.schoolwebsite}</p>
