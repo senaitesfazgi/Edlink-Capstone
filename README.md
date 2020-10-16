@@ -16,7 +16,7 @@ This website is created using Front End: REACT, HTML5, CSS3, JavaScript includin
 https://trello.com/b/FY3k0O7v/edlink-capstone-project
 
 ## Project details document link
-
+https://drive.google.com/file/d/1G0ktZqKGYpjRKKCYhXa3Cm2zpqbsAmX8/view?usp=sharing
 
 ## Application website installation instructions
 
