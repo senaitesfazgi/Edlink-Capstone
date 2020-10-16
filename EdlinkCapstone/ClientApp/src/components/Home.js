@@ -6,9 +6,24 @@ export class Home extends Component {
     static displayName = Home.name;
     constructor(props) {
         super(props);
-
+        this.state = {
+            searchTerm: ""
+        }
     }
+
+     handleChange = (e) => {
+        this.setState({
+            searchTerm: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault() // disable regular form submission
+        this.props.history.push('/schools?search=' + this.state.searchTerm)
+    }
+
     render() {
+
         return (
             <div className="backGround">
                 <div className="title-background">
@@ -16,8 +31,9 @@ export class Home extends Component {
                 </div>
                 <div className="column1">
                     <p className="missionStatement">Make the right choice in your kid's future!</p>
-                    <form>
-                        <input className="searchBarInput" placeholder="SEARCH:" id="firstName" type="text" />
+                    <form onSubmit={this.handleSubmit}   >
+                        <input className="searchBarInput" placeholder="SEARCH:" id="firstName" type="text"
+                            value={this.state.searchTerm} onChange={e => this.handleChange(e)} />
                     </form>
                 </div>
                 <div className="welcomeBackground">

@@ -9,7 +9,9 @@ export class Schools extends Component {
     constructor(props) {
         //creating school properties and search properties
         super(props);
-        this.state = { schools: [], search: "" };
+        // access query parameter
+        const default_search_term = new URLSearchParams(props.location.search).get('search');
+        this.state = { schools: [], search: default_search_term || "" };
     }
     componentDidMount() {
         // calling the populate schoool data method to fetch data from the API
@@ -20,12 +22,18 @@ export class Schools extends Component {
         this.setState({ search: event.target.value.substr(0, 20) });
     }
 
+
+
     render() {
         // schools are filtered based upon the search state. 
         let filteredSchools = this.state.schools.filter(
             (school) => {
                 return school.school_name.toLowerCase().indexOf(this.state.search) !== -1;
             });
+
+        function Item(props) {
+            return <li>{props.message}</li>;
+        }
 
         return (
             <div>
@@ -41,15 +49,25 @@ export class Schools extends Component {
                 </div>
                 <div className="schools">
                     {
+
                         //Filtered schools are displayed here
                         filteredSchools.map((school) => {
+                            debugger
                             return (
                                 <div className="school">
-
                                     <h5 className="schoolName">{school.school_name}</h5>
-
                                     <div className="details">
                                         <p>{school.address}</p>
+                                        <div>
+                                            {
+                                                Object.keys(school).map((prop) => {
+                                                    if (prop == 'school_website') {
+                                                        return (                                  
+                                                            <a href={school[prop].url} target="_blank">{school[prop].url}</a>
+                                                        )
+                                                    }
+                                                })}
+                                        </div>
                                         <p>{school.schoolwebsite}</p>
                                         <p>{school.school_phone}</p>
                                         <p>{school.school_email}</p>
@@ -57,7 +75,8 @@ export class Schools extends Component {
                                     </div>
                                 </div>
                             );
-                        })}
+                        })
+                    }
                 </div>
             </div>
         );
