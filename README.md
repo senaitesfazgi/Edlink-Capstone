@@ -18,7 +18,7 @@ https://trello.com/b/FY3k0O7v/edlink-capstone-project
 ## Project details document link
 
 
-## App installation instructions
+## Application website installation instructions
 
 ### Clone the GitHub Repo
 * Open git bash(console)
