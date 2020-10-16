@@ -88,7 +88,7 @@ class Register extends Component {
                                 onChange={(event, newValue) => this.setState({ passWord: newValue })}
                             />
                             <br />
-                            <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)} />
+                            <RaisedButton className="buttonRegister" label="Submit" primary={true} onClick={(event) => this.handleClick(event)} />
                         </div>
                     </div>
                 </MuiThemeProvider>

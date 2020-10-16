@@ -83,7 +83,7 @@ class Login extends Component {
                                 onChange={(event, newValue) => this.setState({ passWord: newValue })}
                             />
                             <br />
-                            <RaisedButton className="buttonLogin" label="Login" primary={true} style={style} onClick={(event) => this.handleClick(event)} />
+                            <RaisedButton className="buttonLogin" label="Login" primary={true} onClick={(event) => this.handleClick(event)} />
                         </div>
                     </div>
                 </MuiThemeProvider>

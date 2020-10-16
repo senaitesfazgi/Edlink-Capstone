@@ -2,7 +2,7 @@
   "programs": [
     {
 
-      "programName": "REGULAR PROGRAM",
+      "programName": "ADVANCE PROGRAM",
       "programImage": "AP.png"
     },
     {
@@ -12,62 +12,48 @@
     },
     {
 
-      "programName": "ATHLETICS",
+      "programName": "ENGLISH",
       "programImage": "English.png"
     },
     {
 
-      "programName": "SPECIAL EDUCATION NEEDS",
+      "programName": "MATH",
       "programImage": "Math.png"
     },
     {
 
-      "programName": "EARLY YEARS",
+      "programName": "MUSIC",
       "programImage": "Music.png"
     },
     {
 
-      "programName": "FAITH-BASED",
+      "programName": "PHYSICAL EDUCATION",
       "programImage": "PhyEd.png"
     },
     {
 
-      "programName": "FIRST NATIONS, MÉTIS, AND INUIT",
+      "programName": "SCIENCE",
       "programImage": "Science.png"
     },
     {
 
-      "programName": "LANGUAGES",
+      "programName": "SOCIAL STUDIES",
       "programImage": "SocialStudy.png"
     },
     {
 
-      "programName": "TEACHING PHILOSOPHY",
+      "programName": "SPECIAL NEEDS EDUCATION",
       "programImage": "SpecialNeeds.png"
     },
     {
 
-      "programName": "ENGLISH LANGUAGE LEARNING",
+      "programName": "SUMMER SCHOOL",
       "programImage": "SummerSchool.png"
     },
     {
 
-      "programName": "HOME AND ONLINE EDUCATION",
+      "programName": "PSYCHOLOGY",
       "programImage": "AP.png"
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   ]
 }

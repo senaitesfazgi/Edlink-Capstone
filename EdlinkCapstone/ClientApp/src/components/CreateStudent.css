@@ -3,7 +3,7 @@
     background-color: rgb(154, 216, 222);
     height: 680px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
-    background-image: url('../Images/EdmontonSkylineGreen.png');
+    background-image: url('../assets/images/EdmontonSkylineGreen.png');
     background-repeat: no-repeat;
     background-position-y: 205px;
 }

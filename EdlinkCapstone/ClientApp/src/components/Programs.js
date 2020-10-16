@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Programs.css';
 import programs from './Programs.json'
-import images from '../assets/images/AP.png';
 
 export class Programs extends Component {
     static displayName = Programs.name;
@@ -40,8 +39,6 @@ export class Programs extends Component {
                         //Filtered programs are displayed here
                         filteredPrograms.map((program) => {
                             return (
-
-                             
                                 <div className="program">
                                     <h5 className="programName">{program.programName}</h5>
 
