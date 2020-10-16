@@ -2,12 +2,17 @@
 .school {
     background-color: rgb(145, 172, 209);
     width: 78%;
+    height: auto;
     margin-left: 40px;
     margin-top: 20px;
     border-radius: 35px;
     border: 6px solid rgb(25, 130, 130);
     text-align: center;
     box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.details {
+    margin-bottom: 20px;
 }
 
 .searchBarInputSchools {
@@ -33,7 +38,6 @@
 @media (min-width: 576px) {
     .school {
         width: 50%;
-        height: auto;
         margin-left: 20px;
         margin-right: 20px;
     }
