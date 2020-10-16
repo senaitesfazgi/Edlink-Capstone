@@ -28,7 +28,7 @@ https://trello.com/b/FY3k0O7v/edlink-capstone-project
     * `Double click on EdlinkCapstone.sln file inside the capstone-project-dams folder to open the project in Microsoft Visual Studio Community`
 * Open Visual Studio Package Manager Console Window (To access Package Manager Console in Visual Studio: go to Tools menu > NuGet Package Manager > Package Manager Console)
 
-### Type the following commands
+### Type the following commands to install needed packages
 * `dotnet add package Microsoft.EntityFrameworkCore.Design`
 * `dotnet add package Pomelo.EntityFrameworkCore.MySql`
 * `dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
