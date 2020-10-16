@@ -36,4 +36,4 @@ https://trello.com/b/FY3k0O7v/edlink-capstone-project
 * `npm install axios`
 
 ### To view the project in your browser type the command
-* `In Microsoft Visual Studio Community 2019 (or latest version) press the play icon button called IIS Express in the tools bar menu or alternatively go to the debug menu and press Start Without Debugging to view website on browser.`
+* `In Microsoft Visual Studio Community press the play icon button called IIS Express in the tools bar menu or alternatively go to the debug menu and press Start Without Debugging to view website on browser.`
