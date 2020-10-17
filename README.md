@@ -2,9 +2,9 @@
 
 ![EDLINK Logo](https://github.com/TECHCareers-by-Manpower/capstone-project-dams/blob/master/EdlinkCapstone/ClientApp/src/assets/images/EdLinkLogo.png)
 
-EDLINK is an Edmonton Grade schools search website that allows user to search for schools from grade kindergarten to grade 12 in Edmonton, Alberta, Canada.
+EDLINK is an Edmonton Grade schools search website that allows user to search for schools from grade kindergarden to grade 12 in Edmonton, Alberta, Canada.
 
-This website is created using Front End: REACT, HTML5, CSS3, JavaScript including ES6. Back End/Server: Entity Framework, C-Sharp, ASP.Net, MVC web application (.net core Framework). DataBase: MySQL, API Data.
+This website is created using Front End Technology Languages: REACT, HTML5, CSS3, JavaScript including ES6. Back End/Server: Entity Framework, C-Sharp, ASP.Net, MVC web application (.net core Framework). DataBase: MySQL, API Data.
 
 ## Team Members
 * Dinh Thai
@@ -22,7 +22,7 @@ https://drive.google.com/file/d/1G0ktZqKGYpjRKKCYhXa3Cm2zpqbsAmX8/view?usp=shari
 
 ### Clone the GitHub Repo
 * Open git bash(console)
-* Got to github link "https://github.com/TECHCareers-by-Manpower/capstone-project-dams". Copy the link.
+* Go to github link "https://github.com/TECHCareers-by-Manpower/capstone-project-dams". Copy the link.
 * Write following git commands: 
     * `git clone https://github.com/TECHCareers-by-Manpower/capstone-project-dams.git`
     * `Double click on EdlinkCapstone.sln file inside the capstone-project-dams folder to open the project in Microsoft Visual Studio Community`
