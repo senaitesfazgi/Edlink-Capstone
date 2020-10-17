@@ -4,7 +4,7 @@
 
 # Problem Definition and Scope
 
-Problem: For parents choosing schools for their kids.
+Problem: Parents having to choose schools for their kids.
 
 Solution: To come up with an App for parents to decide which school is ideal for their kids according to location/amenities/zones, schools credentials, schools special needs/programs/criteria, AP (Advanced Placement) programs, School specializations.
 
