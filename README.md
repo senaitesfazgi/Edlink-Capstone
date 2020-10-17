@@ -2,6 +2,12 @@
 
 ![EDLINK Logo](https://github.com/TECHCareers-by-Manpower/capstone-project-dams/blob/master/EdlinkCapstone/ClientApp/src/assets/images/EdLinkLogo.png)
 
+## Team Members
+* Dinh Thai
+* Ashishkumar Patel
+* Muzaffar Shaikh
+* Senai Tesfazgi
+
 # Problem Definition and Scope
 
 Problem: Parents having to choose schools for their kids.
@@ -15,12 +21,6 @@ EDLINK is an Edmonton Grade schools search website that allows user to search fo
 This is an Informational App Website for Edmonton Public Schools seekers for parents to find a suitable school for their kids. This App provides accessible information to help and guide parents in making an ideal decision to choose a school for their kids.
 
 This website is created using Front End Technology Languages: REACT, HTML5, CSS3, JavaScript including ES6. Back End/Server: Entity Framework, C-Sharp, ASP.Net, MVC web application (.net core Framework). DataBase: MySQL, API Data.
-
-## Team Members
-* Dinh Thai
-* Ashishkumar Patel
-* Muzaffar Shaikh
-* Senai Tesfazgi
 
 ## Trello Board
 https://trello.com/b/FY3k0O7v/edlink-capstone-project
