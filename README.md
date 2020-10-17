@@ -2,7 +2,17 @@
 
 ![EDLINK Logo](https://github.com/TECHCareers-by-Manpower/capstone-project-dams/blob/master/EdlinkCapstone/ClientApp/src/assets/images/EdLinkLogo.png)
 
+# Problem Definition and Scope
+
+Problem: For parents choosing schools for their kids.
+
+Solution: To come up with an App for parents to decide which school is ideal for their kids according to location/amenities/zones, schools credentials, schools special needs/programs/criteria, AP (Advanced Placement) programs, School specializations.
+
+# Introduction
+
 EDLINK is an Edmonton Grade schools search website that allows user to search for schools from grade kindergarden to grade 12 in Edmonton, Alberta, Canada.
+
+This is an Informational App Website for Edmonton Public Schools seekers for parents to find a suitable school for their kids. This App provides accessible information to help and guide parents in making an ideal decision to choose a school for their kids.
 
 This website is created using Front End Technology Languages: REACT, HTML5, CSS3, JavaScript including ES6. Back End/Server: Entity Framework, C-Sharp, ASP.Net, MVC web application (.net core Framework). DataBase: MySQL, API Data.
 
