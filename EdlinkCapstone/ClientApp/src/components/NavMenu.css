@@ -82,7 +82,7 @@
     }
 }
 
-/*For desktop*/
+/*For tablet*/
 @media (min-width: 992px) {
     .logo {
         width: 75%;
