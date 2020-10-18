@@ -52,7 +52,6 @@ export class Schools extends Component {
 
                         //Filtered schools are displayed here
                         filteredSchools.map((school) => {
-                            debugger
                             return (
                                 <div className="school">
                                     <h5 className="schoolName">{school.school_name}</h5>

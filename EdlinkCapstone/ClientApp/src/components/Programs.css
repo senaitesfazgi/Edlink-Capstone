@@ -53,11 +53,7 @@
     }
 
     .searchBarInputPrograms {
-        border-radius: 20px;
-        border: 5px solid rgb(25, 130, 130);
-        margin-left: 40px;
         width: 84%;
-        margin-top: 5px;
     }
 }
 
@@ -90,16 +86,3 @@
         margin-top: -50px;
     }
 }
-
-/*For desktop*/
-@media (min-width: 1200px) {
-    .search-ed-pub {
-        font-size: 27px;
-    }
-
-    .searchBarInputPrograms {
-        width: 50%;
-        margin-top: -55px;
-    }
-}
-

@@ -22,11 +22,6 @@
     margin-left: 60px;
 }
 
-.studentDetails {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: left;
-}
-
 .textInput {
     border-radius: 20px;
     width: 78%;
@@ -69,12 +64,10 @@
     }
 
     .textInput {
-        border-radius: 20px;
         width: 90%;
     }
 
     .textLabel {
-        border-radius: 20px;
         font-size: 16px;
     }
 
@@ -94,15 +87,8 @@
     }
 }
 
-/*For tablet*/
-@media screen and (min-width: 992px) {
-    .columnCS2 {
-        margin-right: 50px;
-    }
-}
-
 /*For desktop*/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
     .backGroundRegistration {
         height: 530px;
     }
