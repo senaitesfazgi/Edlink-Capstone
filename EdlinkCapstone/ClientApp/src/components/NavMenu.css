@@ -82,6 +82,24 @@
     }
 }
 
+/*For tablet*/
+@media (min-width: 992px) {
+    .logo {
+        width: 75%;
+        margin-left: 55px;
+    }
+
+    .text-dark {
+        font-size: 18px;
+        width: 160px;
+    }
+
+    .login {
+        font-size: 18px;
+        width: 160px;
+    }
+}
+
 /*For desktop*/
 @media (min-width: 1024px) {
     .logo {
