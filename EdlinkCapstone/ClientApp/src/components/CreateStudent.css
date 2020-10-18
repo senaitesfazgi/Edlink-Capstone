@@ -78,10 +78,6 @@
         font-size: 16px;
     }
 
-    .studentDetails {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-
     .submitButton {
         width: 90%;
     }
@@ -102,27 +98,6 @@
 @media screen and (min-width: 992px) {
     .columnCS2 {
         margin-right: 50px;
-    }
-}
-
-/*For tablet*/
-@media screen and (min-width: 1024px) {
-    .textInput {
-        border-radius: 20px;
-        width: 90%;
-    }
-
-    .textLabel {
-        border-radius: 20px;
-        font-size: 18px;
-    }
-
-    .studentDetails {
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-
-    .submitButton {
-        width: 87%;
     }
 }
 
