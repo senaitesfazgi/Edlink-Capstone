@@ -49,28 +49,25 @@ export class Schools extends Component {
                 </div>
                 <div className="schools">
                     {
-
                         //Filtered schools are displayed here
                         filteredSchools.map((school) => {
-                            debugger
                             return (
                                 <div className="school">
                                     <h5 className="schoolName">{school.school_name}</h5>
                                     <div className="details">
                                         <p>{school.address}</p>
-                                        <div>
+                                        <p className="weblink">
                                             {
                                                 Object.keys(school).map((prop) => {
                                                     if (prop == 'school_website') {
-                                                        return (                                  
+                                                        return (
                                                             <a href={school[prop].url} target="_blank">{school[prop].url}</a>
                                                         )
                                                     }
                                                 })}
-                                        </div>
-                                        <p>{school.schoolwebsite}</p>
+                                        </p>
                                         <p>{school.school_phone}</p>
-                                        <p>{school.school_email}</p>
+                                        <p>Email: {school.school_email}</p>
                                         <Link to="/create-student">Register at {school.school_name} </Link>
                                     </div>
                                 </div>
@@ -88,7 +85,6 @@ export class Schools extends Component {
         });
     }
 }
-
 
 
 

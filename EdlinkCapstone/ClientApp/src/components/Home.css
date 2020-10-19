@@ -1,4 +1,4 @@
-﻿/*Mobile First*/
+﻿﻿ /*Mobile First*/
 .title-background {
     background-color: rgb(117, 137, 189);
     padding: 1px;
@@ -69,10 +69,10 @@
     color: white;
 }
 
-    .viewSchoolsButton:hover {
-        background-color: rgb(252, 177, 74);
-        text-decoration: none;
-    }
+.viewSchoolsButton:hover {
+    background-color: rgb(252, 177, 74);
+    text-decoration: none;
+}
 
 /*For tablet*/
 @media (min-width: 576px) {
