@@ -48,7 +48,7 @@ export class Programs extends Component {
                                         <p>{program.school_email}</p>
                                     </div>
                                     <div>
-                                        <img src={require('../assets/images/' + program.programImage)} alt='' />
+                                        <a href={program.link} target="_blank"><img src={require('../assets/images/' + program.programImage)} alt='' /></a>
                                     </div>
                                 </div>
                             );

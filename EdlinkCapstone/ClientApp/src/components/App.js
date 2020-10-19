@@ -14,17 +14,8 @@ class App extends Component {
         super(props);
         this.state = {
             loginPage: [],
-            uploadscreen: [],
-            loggedInStatus: "LogIn/Register",
             userIsLoggedIn: false,
-            user: {}
         }
-        this.handleLogin = this.handleLogin.bind(this);
-    }
-    handleLogin() {
-        this.setState({
-            loggedInStatus:"LOGGED_In"
-        })
     }
 
     // change the user is logged in state
@@ -52,12 +43,23 @@ class App extends Component {
                     <Route exact
                         path='/'
                         render={props => (
-                            <Home {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} userIsLoggedIn={this.state.userIsLoggedIn} />
-                        )}
+                            <Home {...props} toggleUserLoggedIn={this.toggleUserLoggedIn} userIsLoggedIn={this.state.userIsLoggedIn} />)}
                     />
-                    <Route path='/programs' component={Programs} />
-                    <Route path='/schools' component={Schools} />
-                    <Route path='/create-student' component={CreateStudent} />
+                    <Route exact
+                        path='/programs'
+                        render={props => (
+                            <Programs {...props} toggleUserLoggedIn={this.toggleUserLoggedIn} userIsLoggedIn={this.state.userIsLoggedIn} />)}
+                    />
+                    <Route exact
+                        path='/schools'
+                        render={props => (
+                            <Schools {...props} toggleUserLoggedIn={this.toggleUserLoggedIn} userIsLoggedIn={this.state.userIsLoggedIn} />                        )}
+                    />
+                    <Route exact
+                        path='/create-student'
+                        render={props => (
+                            <CreateStudent {...props} toggleUserLoggedIn={this.toggleUserLoggedIn} userIsLoggedIn={this.state.userIsLoggedIn} />)}
+                    />
                 </div>
             </Layout>
         );

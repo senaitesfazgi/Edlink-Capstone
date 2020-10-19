@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 // Don't forget to "npm install axios" and import it on any pages from which you are making HTTP requests.
 import axios from 'axios';
+import { Redirect } from "react-router-dom";
 import './CreateStudent.css';
 
 // The name of the class is used in routing in App.js. The name of the file is not important in that sense.
@@ -12,7 +13,7 @@ export class CreateStudent extends Component {
     constructor(props) {
         // 1) When we build the component, we assign the state to be loading, and register an empty list in which to store our forecasts.
         super(props);
-        this.state = { statusCode: 0, response: [], firstName: "", lastName: "", address: "", email: "", phoneNumber: "", dateOfBirth: "", schoolID: "", waiting: false };
+        this.state = { statusCode: 0, response: [], firstName: "", lastName: "", address: "", email: "", phoneNumber: "", dateOfBirth: "", schoolID: ""};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -47,45 +48,52 @@ export class CreateStudent extends Component {
 
     // Either way we render the title, and a description.
     render() {
-        return (
-            <div className="backGroundRegistration">
-                <div className="title-background">
-                    <h2 className="title">REGISTRATION</h2>
-                </div>
-                <div className="responseStatus">
-                    <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
-                </div>
-                <div className="responseData">
-                    <p>{JSON.stringify(this.state.response)}</p>
-                </div>
-                <form className="studentDetails" onSubmit={this.handleSubmit}>
-                    <div className="columnCS1">
-                        <label className="textLabel" htmlfor="firstName">FIRST NAME:</label>
-                        <input className="textInput" id="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} required />
-                        <br />
-                        <label className="textLabel" htmlfor="lastName">LAST NAME:</label>
-                        <input className="textInput" id="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} required />
-                        <br />
-                        <label className="textLabel" htmlfor="address">ADDRESS:</label>
-                        <input className="textInput" id="address" type="text" value={this.state.address} onChange={this.handleChange} required />
-                        <br />
-                        <label className="textLabel" htmlfor="email">EMAIL:</label>
-                        <input className="textInput" id="email" type="text" value={this.state.email} onChange={this.handleChange} required />
+        if (!this.props.userIsLoggedIn) {
+            return <Redirect to={{
+                pathname: "/loginpage",
+            }}
+            />
+        } else {
+            return (
+                <div className="backGroundRegistration">
+                    <div className="title-background">
+                        <h2 className="title">REGISTRATION</h2>
                     </div>
-                    <div className="columnCS2">
-                        <label className="textLabel" htmlfor="phoneNumber">PHONE NUMBER:</label>
-                        <input className="textInput" id="phoneNumber" type="number" value={this.state.phoneNumber} onChange={this.handleChange} required />
-                        <br />
-                        <label className="textLabel" htmlfor="dateOfBirth">DATE OF BIRTH:</label>
-                        <input className="textInput" id="dateOfBirth" type="date" value={this.state.dateOfBirth} onChange={this.handleChange} />
-                        <br />
-                        <label className="textLabel" htmlfor="schoolID">SCHOOL ID:</label>
-                        <input className="textInput" id="schoolID" type="text" value={this.state.schoolID} onChange={this.handleChange} />
+                    <div className="responseStatus">
+                        <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
                     </div>
-                    <input className="submitButton" type="submit" value="REGISTER" />
-                </form>
-            </div>
-        );
+                    <div className="responseData">
+                        <p>{JSON.stringify(this.state.response)}</p>
+                    </div>
+                    <form className="studentDetails" onSubmit={this.handleSubmit}>
+                        <div className="columnCS1">
+                            <label className="textLabel" htmlfor="firstName">FIRST NAME:</label>
+                            <input className="textInput" id="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} required />
+                            <br />
+                            <label className="textLabel" htmlfor="lastName">LAST NAME:</label>
+                            <input className="textInput" id="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} required />
+                            <br />
+                            <label className="textLabel" htmlfor="address">ADDRESS:</label>
+                            <input className="textInput" id="address" type="text" value={this.state.address} onChange={this.handleChange} required />
+                            <br />
+                            <label className="textLabel" htmlfor="email">EMAIL:</label>
+                            <input className="textInput" id="email" type="text" value={this.state.email} onChange={this.handleChange} required />
+                        </div>
+                        <div className="columnCS2">
+                            <label className="textLabel" htmlfor="phoneNumber">PHONE NUMBER:</label>
+                            <input className="textInput" id="phoneNumber" type="number" value={this.state.phoneNumber} onChange={this.handleChange} required />
+                            <br />
+                            <label className="textLabel" htmlfor="dateOfBirth">DATE OF BIRTH:</label>
+                            <input className="textInput" id="dateOfBirth" type="date" value={this.state.dateOfBirth} onChange={this.handleChange} />
+                            <br />
+                            <label className="textLabel" htmlfor="schoolID">SCHOOL ID:</label>
+                            <input className="textInput" id="schoolID" type="text" value={this.state.schoolID} onChange={this.handleChange} />
+                        </div>
+                        <input className="submitButton" type="submit" value="REGISTER" />
+                    </form>
+                </div>
+            );
+        }
     }
 
     async handleSubmit(event) {

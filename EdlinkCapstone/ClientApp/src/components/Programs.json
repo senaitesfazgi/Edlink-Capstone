@@ -3,57 +3,68 @@
     {
 
       "programName": "ADVANCE PROGRAM",
-      "programImage": "AP.png"
+      "programImage": "AP.png",
+      "link": "https://epsb.ca/programs/arts/"
     },
     {
 
       "programName": "ARTS",
-      "programImage": "Art.png"
+      "programImage": "Art.png",
+      "link": "https://epsb.ca/programs/arts/"
     },
     {
 
       "programName": "ENGLISH",
-      "programImage": "English.png"
+      "programImage": "English.png",
+      "link": "https://epsb.ca/programs/englishlanguagelearning/"
     },
     {
 
       "programName": "MATH",
-      "programImage": "Math.png"
+      "programImage": "Math.png",
+      "link": "https://epsb.ca/programs/arts/"
     },
     {
 
       "programName": "MUSIC",
-      "programImage": "Music.png"
+      "programImage": "Music.png",
+      "link": "https://epsb.ca/programs/arts/"
     },
     {
 
       "programName": "PHYSICAL EDUCATION",
-      "programImage": "PhyEd.png"
+      "programImage": "PhyEd.png",
+      "link": "https://epsb.ca/programs/athletics/"
     },
     {
 
       "programName": "SCIENCE",
-      "programImage": "Science.png"
+      "programImage": "Science.png",
+      "link": "https://epsb.ca/programs/arts/"
     },
     {
 
       "programName": "SOCIAL STUDIES",
-      "programImage": "SocialStudy.png"
+      "programImage": "SocialStudy.png",
+      "link": "https://epsb.ca/programs/arts/"
     },
     {
 
       "programName": "SPECIAL NEEDS EDUCATION",
-      "programImage": "SpecialNeeds.png"
+      "programImage": "SpecialNeeds.png",
+      "link": "https://epsb.ca/programs/arts/"
     },
     {
 
       "programName": "SUMMER SCHOOL",
-      "programImage": "SummerSchool.png"
+      "programImage": "SummerSchool.png",
+      "link": "https://epsb.ca/programs/arts/"
     },
     {
 
       "programName": "PSYCHOLOGY",
-      "programImage": "AP.png"
+      "programImage": "AP.png",
+      "link": "https://epsb.ca/programs/arts/"
     }
   ]
 }
