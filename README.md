@@ -25,9 +25,9 @@ This website is created using Front End Technology Languages: REACT, HTML5, CSS3
 ## Trello Board
 https://trello.com/b/FY3k0O7v/edlink-capstone-project
 
-# Instructions for using the application.
+# Instructions for using the application
 
-## List of Test Cases & Testing Instructions.
+## List of Test Cases & Testing Instructions
 
 Project details document link: https://drive.google.com/file/d/1G0ktZqKGYpjRKKCYhXa3Cm2zpqbsAmX8/view?usp=sharing
 
