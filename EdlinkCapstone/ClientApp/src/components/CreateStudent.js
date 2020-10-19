@@ -45,7 +45,6 @@ export class CreateStudent extends Component {
 
     }
 
-
     // Either way we render the title, and a description.
     render() {
         return (
@@ -62,20 +61,20 @@ export class CreateStudent extends Component {
                 <form className="studentDetails" onSubmit={this.handleSubmit}>
                     <div className="columnCS1">
                         <label className="textLabel" htmlfor="firstName">FIRST NAME:</label>
-                        <input className="textInput" id="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} required/>
+                        <input className="textInput" id="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} required />
                         <br />
                         <label className="textLabel" htmlfor="lastName">LAST NAME:</label>
-                        <input className="textInput" id="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} required/>
+                        <input className="textInput" id="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} required />
                         <br />
                         <label className="textLabel" htmlfor="address">ADDRESS:</label>
-                        <input className="textInput" id="address" type="text" value={this.state.address} onChange={this.handleChange} required/>
+                        <input className="textInput" id="address" type="text" value={this.state.address} onChange={this.handleChange} required />
                         <br />
                         <label className="textLabel" htmlfor="email">EMAIL:</label>
-                        <input className="textInput" id="email" type="text" value={this.state.email} onChange={this.handleChange} required/>
+                        <input className="textInput" id="email" type="text" value={this.state.email} onChange={this.handleChange} required />
                     </div>
                     <div className="columnCS2">
                         <label className="textLabel" htmlfor="phoneNumber">PHONE NUMBER:</label>
-                        <input className="textInput" id="phoneNumber" type="number" value={this.state.phoneNumber} onChange={this.handleChange} required/>
+                        <input className="textInput" id="phoneNumber" type="number" value={this.state.phoneNumber} onChange={this.handleChange} required />
                         <br />
                         <label className="textLabel" htmlfor="dateOfBirth">DATE OF BIRTH:</label>
                         <input className="textInput" id="dateOfBirth" type="date" value={this.state.dateOfBirth} onChange={this.handleChange} />
@@ -89,17 +88,10 @@ export class CreateStudent extends Component {
         );
     }
 
-
     async handleSubmit(event) {
         event.preventDefault();
         this.setState({ waiting: true });
         // Axios replaces fetch(), same concept. Send the response and "then" when it comes back, put it in the state.
-
-        /*
-        axios.post(`person/api/create?firstName=${this.state.firstName}&lastname=${this.state.lastName}&phone=${this.state.phone}`).then(res => {
-            this.setState({ statusCode: res.status, response: res.data, loading: false });
-        });
-        */
         axios({
             method: 'post',
             url: 'https://localhost:44380/API/StudentAPI/AddStudent',

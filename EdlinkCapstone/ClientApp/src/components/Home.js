@@ -11,7 +11,7 @@ export class Home extends Component {
         }
     }
 
-     handleChange = (e) => {
+    handleChange = (e) => {
         this.setState({
             searchTerm: e.target.value
         })
@@ -23,7 +23,6 @@ export class Home extends Component {
     }
 
     render() {
-
         return (
             <div className="backGround">
                 <div className="title-background">

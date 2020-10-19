@@ -1,10 +1,10 @@
 ﻿import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 import Login from './Login'
 import axios from 'axios';
-import './Register.css';
-
 class Register extends Component {
     constructor(props) {
         super(props);
@@ -56,40 +56,38 @@ class Register extends Component {
             <div>
                 <MuiThemeProvider>
                     <div>
-                        <div className="title-background">
-                            <h2 className="title">REGISTER</h2>
-                        </div>
-                        <div className="backgroundRegister">
-                            <div className="responseStatus">
-                                <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
-                            </div>
-                            <div className="responseData">
-                                <p>{JSON.stringify(this.state.response)}</p>
-                            </div>
-                            <input className="firstName"
-                                placeholder="Enter your First Name:"
-                                onChange={(event, newValue) => this.setState({ firstName: newValue })}
-                            />
-                            <br />
-                            <input className="lastName"
-                                placeholder="Enter your Last Name:"
-                                onChange={(event, newValue) => this.setState({ lastName: newValue })}
-                            />
-                            <br />
-                            <input className="email"
-                                placeholder="Enter your Email:"
-                                type="email"
-                                onChange={(event, newValue) => this.setState({ email: newValue })}
-                            />
-                            <br />
-                            <input className="password"
-                                type="password"
-                                placeholder="Enter your Password:"floatingLabelText="Password"
-                                onChange={(event, newValue) => this.setState({ passWord: newValue })}
-                            />
-                            <br />
-                            <RaisedButton className="buttonRegister" label="Submit" primary={true} onClick={(event) => this.handleClick(event)} />
-                        </div>
+                        <AppBar
+                            title="Register"
+                        />
+                        <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
+                        <p>Response Data: {JSON.stringify(this.state.response)}</p>
+                        <TextField
+                            hintText="Enter your First Name"
+                            floatingLabelText="First Name"
+                            onChange={(event, newValue) => this.setState({ firstName: newValue })}
+                        />
+                        <br />
+                        <TextField
+                            hintText="Enter your Last Name"
+                            floatingLabelText="Last Name"
+                            onChange={(event, newValue) => this.setState({ lastName: newValue })}
+                        />
+                        <br />
+                        <TextField
+                            hintText="Enter your Email"
+                            type="email"
+                            floatingLabelText="Email"
+                            onChange={(event, newValue) => this.setState({ email: newValue })}
+                        />
+                        <br />
+                        <TextField
+                            type="password"
+                            hintText="Enter your Password"
+                            floatingLabelText="Password"
+                            onChange={(event, newValue) => this.setState({ passWord: newValue })}
+                        />
+                        <br />
+                        <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)} />
                     </div>
                 </MuiThemeProvider>
             </div>
