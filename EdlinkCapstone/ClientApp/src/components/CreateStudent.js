@@ -13,7 +13,7 @@ export class CreateStudent extends Component {
     constructor(props) {
         // 1) When we build the component, we assign the state to be loading, and register an empty list in which to store our forecasts.
         super(props);
-        this.state = { statusCode: 0, response: [], firstName: "", lastName: "", address: "", email: "", phoneNumber: "", dateOfBirth: "", schoolID: "", waiting: false, userIsLoggedIn: false };
+        this.state = { statusCode: 0, response: [], firstName: "", lastName: "", address: "", email: "", phoneNumber: "", dateOfBirth: "", schoolID: ""};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
