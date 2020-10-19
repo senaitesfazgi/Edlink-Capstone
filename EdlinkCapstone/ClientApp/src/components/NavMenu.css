@@ -1,9 +1,17 @@
-﻿/*Mobile First*/
+﻿﻿ /*Mobile First*/
 .logo {
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
+    -webkit-filter: initial;
+    -moz-filter: initial;
 }
+
+.logo:hover {
+    text-decoration-color: black;
+    text-emphasis-color: black;
+}
+
 
 .text-dark {
     background-color: rgb(25, 164, 172);
@@ -61,6 +69,7 @@
 @media (min-width: 768px) {
     .logo {
         width: 70%;
+        margin-left: 55px;
     }
 
     .text-dark {
@@ -78,6 +87,25 @@
 @media (min-width: 992px) {
     .logo {
         width: 75%;
+        margin-left: 55px;
+    }
+
+    .text-dark {
+        font-size: 18px;
+        width: 160px;
+    }
+
+    .login {
+        font-size: 18px;
+        width: 160px;
+    }
+}
+
+/*For desktop*/
+@media (min-width: 1024px) {
+    .logo {
+        width: 75%;
+        margin-left: 55px;
     }
 
     .text-dark {
