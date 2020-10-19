@@ -3,6 +3,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import Login from './Login';
 import Register from './Register';
+import { Redirect } from "react-router-dom";
+
 class Loginscreen extends Component {
     constructor(props) {
         super(props);
@@ -12,7 +14,8 @@ class Loginscreen extends Component {
             loginscreen: [],
             loginmessage: '',
             buttonLabel: 'Register',
-            isLogin: true
+            isLogin: true,
+            userIsLoggedIn: false
         }
     }
     handleClick(event) {
@@ -31,7 +34,7 @@ class Loginscreen extends Component {
         }
         else {
             var loginscreen = [];
-            loginscreen.push(<Login parentContext={this} />);
+            loginscreen.push(<Login parentContext={this} toggleUserLoggedIn={this.props.toggleUserLoggedIn}/>);
             loginmessage = "Not Registered yet.Go to registration";
             this.setState({
                 loginscreen: loginscreen,
@@ -43,7 +46,7 @@ class Loginscreen extends Component {
     }
     componentWillMount() {
         var loginscreen = [];
-        loginscreen.push(<Login parentContext={this} appContext={this.props.parentContext} />);
+        loginscreen.push(<Login parentContext={this} appContext={this.props.parentContext} toggleUserLoggedIn={this.props.toggleUserLoggedIn} />);
         var loginmessage = "Not registered yet, Register Now";
         this.setState({
             loginscreen: loginscreen,
@@ -51,19 +54,27 @@ class Loginscreen extends Component {
         })
     }
     render() {
-        return (
-            <div className="loginscreen">
-                {this.state.loginscreen}
-                <div>
-                    {this.state.loginmessage}
-                    <MuiThemeProvider>
-                        <div>
-                            <RaisedButton label={this.state.buttonLabel} primary={true} style={style} onClick={(event) => this.handleClick(event)} />
-                        </div>
-                    </MuiThemeProvider>
+        if (this.state.userIsLoggedIn) {
+            return <Redirect to={{
+                pathname: "/",
+                state: { userIsLoggedIn: true }
+            }}
+            />
+        } else {
+            return (
+                <div className="loginscreen">
+                    {this.state.loginscreen}
+                    <div>
+                        {this.state.loginmessage}
+                        <MuiThemeProvider>
+                            <div>
+                                <RaisedButton label={this.state.buttonLabel} primary={true} style={style} onClick={(event) => this.handleClick(event)} />
+                            </div>
+                        </MuiThemeProvider>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
 } const style = {
     margin: 15,

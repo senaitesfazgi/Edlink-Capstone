@@ -9,7 +9,7 @@ export class Layout extends Component {
   render () {
     return (
       <div>
-        <NavMenu/>
+            <NavMenu toggleUserLoggedIn={this.props.toggleUserLoggedIn} userIsLoggedIn={this.props.userIsLoggedIn}/>
         <Container>
            {this.props.children} 
         </Container>

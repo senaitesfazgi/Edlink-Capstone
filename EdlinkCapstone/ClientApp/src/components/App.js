@@ -16,6 +16,7 @@ class App extends Component {
             loginPage: [],
             uploadscreen: [],
             loggedInStatus: "LogIn/Register",
+            userIsLoggedIn: false,
             user: {}
         }
         this.handleLogin = this.handleLogin.bind(this);
@@ -25,6 +26,14 @@ class App extends Component {
             loggedInStatus:"LOGGED_In"
         })
     }
+
+    // change the user is logged in state
+    toggleUserLoggedIn = () => {
+        this.setState({
+            userIsLoggedIn: !this.state.userIsLoggedIn
+        });
+    }
+
     componentWillMount() {
         var loginPage = [];
         loginPage.push(<Loginscreen parentContext={this} />);
@@ -33,14 +42,17 @@ class App extends Component {
         })
     }
     render() {
-        return ( 
-            <Layout>
+        return (
+            <Layout toggleUserLoggedIn={this.toggleUserLoggedIn} userIsLoggedIn={this.state.userIsLoggedIn} >
                 <div className="App">
-                    <Route path='/loginPage' component={Loginscreen} />
+                    <Route path='/loginPage'
+                        render={props => (
+                            <Loginscreen {...props} toggleUserLoggedIn={this.toggleUserLoggedIn} userIsLoggedIn={this.state.userIsLoggedIn} />
+                            )} />
                     <Route exact
                         path='/'
                         render={props => (
-                            <Home {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />
+                            <Home {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} userIsLoggedIn={this.state.userIsLoggedIn} />
                         )}
                     />
                     <Route path='/programs' component={Programs} />

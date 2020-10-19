@@ -10,6 +10,16 @@ export class NavMenu extends Component {
         super(props);
     }
 
+    renderButton() {
+        if (this.props.userIsLoggedIn) {
+            // return sign out button
+            return <button onClick={ () => this.props.toggleUserLoggedIn()}> Log Out </button>
+        }
+        else {
+            return <NavLink tag={Link} className="login" to="/loginPage">Login/Register</NavLink>
+        }
+    }
+
     render() {
         return (
             <header>
@@ -27,8 +37,8 @@ export class NavMenu extends Component {
                             <NavItem>
                                 <NavLink tag={Link} className="text-dark" to="/create-student">REGISTRATION</NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink tag={Link} className="login" to="/loginPage">Login/Register</NavLink>
+                        <NavItem>
+                            {this.renderButton()}
                             </NavItem>
                     </Container>
                 </Navbar>

@@ -35,14 +35,17 @@ class Login extends Component {
                     console.log("Login successfull");
                     var loginscreen = [];
                     var loginmessage = [];
-                    loginscreen.push(<Home parentContext={this} />)
+                    loginscreen.push(<Login parentContext={this} />)
+                    this.props.toggleUserLoggedIn();
                     this.props.parentContext.setState(
                         {
                             loginscreen: loginscreen,
                             loginmessage: loginmessage,
                             buttonLabel: "Register",
-                            isLogin: true
+                            isLogin: true,
+                            userIsLoggedIn: true
                         })
+                    
                 }
                 else if (response.status == 204) {
                     console.log("Email password do not match");
