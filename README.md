@@ -29,8 +29,7 @@ https://trello.com/b/FY3k0O7v/edlink-capstone-project
 
 ## List of Test Cases & Testing Instructions.
 
-# Project details document link
-https://drive.google.com/file/d/1G0ktZqKGYpjRKKCYhXa3Cm2zpqbsAmX8/view?usp=sharing
+Project details document link: https://drive.google.com/file/d/1G0ktZqKGYpjRKKCYhXa3Cm2zpqbsAmX8/view?usp=sharing
 
 ## Application website installation instructions
 
@@ -55,4 +54,5 @@ https://drive.google.com/file/d/1G0ktZqKGYpjRKKCYhXa3Cm2zpqbsAmX8/view?usp=shari
 ## Citation/References
    James MVC in class examples
   https://github.com/TECHCareers-by-Manpower/4.1-MVC
+  
   https://github.com/TECHCareers-by-Manpower/4.1-EF
