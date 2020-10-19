@@ -27,9 +27,9 @@ https://trello.com/b/FY3k0O7v/edlink-capstone-project
 
 # Instructions for using the application.
 
-## List of Test Cases & Testing Instructions.
+# List of Test Cases & Testing Instructions.
 
-# Project details document link
+## Project details document link
 https://drive.google.com/file/d/1G0ktZqKGYpjRKKCYhXa3Cm2zpqbsAmX8/view?usp=sharing
 
 ## Application website installation instructions
