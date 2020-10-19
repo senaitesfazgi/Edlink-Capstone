@@ -13,7 +13,7 @@ export class NavMenu extends Component {
     renderButton() {
         if (this.props.userIsLoggedIn) {
             // return sign out button
-            return <button onClick={ () => this.props.toggleUserLoggedIn()}> Log Out </button>
+            return <button className="logout" onClick={ () => this.props.toggleUserLoggedIn()}> Log Out </button>
         }
         else {
             return <NavLink tag={Link} className="login" to="/loginPage">Login/Register</NavLink>

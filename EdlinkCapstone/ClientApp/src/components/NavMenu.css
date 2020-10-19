@@ -47,6 +47,25 @@
         background-color: rgb(25, 164, 172);
     }
 
+.logout {
+    background-color: rgb(252, 177, 74);
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    width: 260px;
+    height: 39px;
+    cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
+    color: white !important;
+    margin: 5px;
+    border: none;
+}
+
+    .logout:hover {
+        background-color: rgb(25, 164, 172);
+    }
+
 /*For tablet*/
 @media (min-width: 576px) {
     .logo {
@@ -62,6 +81,12 @@
     .login {
         font-size: 8px;
         width: 80px;
+    }
+
+    .logout {
+        font-size: 10px;
+        width: 80px;
+        height: 29px;
     }
 }
 
@@ -81,6 +106,12 @@
         font-size: 12px;
         width: 110px;
     }
+
+    .logout {
+        font-size: 14px;
+        width: 100px;
+        height: 36px;
+    }
 }
 
 /*For tablet*/
@@ -99,6 +130,12 @@
         font-size: 18px;
         width: 160px;
     }
+
+    .logout {
+        font-size: 20px;
+        width: 146px;
+        height: 43px;
+    }
 }
 
 /*For desktop*/
@@ -116,5 +153,11 @@
     .login {
         font-size: 18px;
         width: 160px;
+    }
+
+    .logout {
+        font-size: 20px;
+        width: 150px;
+        height: 43px;
     }
 }
