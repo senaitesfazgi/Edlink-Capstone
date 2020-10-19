@@ -3,7 +3,7 @@
 ![EDLINK Logo](https://github.com/TECHCareers-by-Manpower/capstone-project-dams/blob/master/EdlinkCapstone/ClientApp/src/assets/images/EdLinkLogo.png)
 
 ## Team Members
-* # D inh Thai
+* Dinh Thai
 * Ashishkumar Patel
 * Muzaffar Shaikh
 * Senai Tesfazgi
