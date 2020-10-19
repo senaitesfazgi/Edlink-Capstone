@@ -25,8 +25,11 @@ This website is created using Front End Technology Languages: REACT, HTML5, CSS3
 ## Trello Board
 https://trello.com/b/FY3k0O7v/edlink-capstone-project
 
-## Project details document link
-https://drive.google.com/file/d/1G0ktZqKGYpjRKKCYhXa3Cm2zpqbsAmX8/view?usp=sharing
+# Instructions for using the application
+
+## List of Test Cases & Testing Instructions
+
+Project details document link: https://drive.google.com/file/d/1G0ktZqKGYpjRKKCYhXa3Cm2zpqbsAmX8/view?usp=sharing
 
 ## Application website installation instructions
 
@@ -47,3 +50,10 @@ https://drive.google.com/file/d/1G0ktZqKGYpjRKKCYhXa3Cm2zpqbsAmX8/view?usp=shari
 
 ### To view the project in your browser type the command
 * `In Microsoft Visual Studio Community press the play icon button called IIS Express in the tools bar menu or alternatively go to the debug menu and press Start Without Debugging to view website on browser.`
+
+## Citation/References
+   James MVC in class examples:
+   
+  https://github.com/TECHCareers-by-Manpower/4.1-MVC
+  
+  https://github.com/TECHCareers-by-Manpower/4.1-EF
