@@ -74,19 +74,19 @@
     }
 
     .text-dark {
-        font-size: 8px;
-        width: 80px;
+        font-size: 7px;
+        width: 65px;
     }
 
     .login {
-        font-size: 8px;
-        width: 80px;
+        font-size: 7px;
+        width: 65px;
     }
 
     .logout {
-        font-size: 10px;
-        width: 80px;
-        height: 29px;
+        font-size: 7px;
+        width: 65px;
+        height: 28px;
     }
 }
 
@@ -98,19 +98,19 @@
     }
 
     .text-dark {
-        font-size: 12px;
-        width: 110px;
+        font-size: 9px;
+        width: 90px;
     }
 
     .login {
-        font-size: 12px;
-        width: 110px;
+        font-size: 9px;
+        width: 90px;
     }
 
     .logout {
-        font-size: 14px;
-        width: 100px;
-        height: 36px;
+        font-size: 9px;
+        width: 90px;
+        height: 30px;
     }
 }
 
@@ -122,42 +122,42 @@
     }
 
     .text-dark {
-        font-size: 18px;
-        width: 160px;
+        font-size: 12px;
+        width: 120px;
     }
 
     .login {
-        font-size: 18px;
-        width: 160px;
+        font-size: 12px;
+        width: 120px;
     }
 
     .logout {
-        font-size: 20px;
-        width: 146px;
-        height: 43px;
+        font-size: 12px;
+        width: 120px;
+        height: 36px;
     }
 }
 
 /*For desktop*/
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
     .logo {
         width: 75%;
         margin-left: 55px;
     }
 
     .text-dark {
-        font-size: 18px;
-        width: 160px;
+        font-size: 14px;
+        width: 140px;
     }
 
     .login {
-        font-size: 18px;
-        width: 160px;
+        font-size: 14px;
+        width: 140px;
     }
 
     .logout {
-        font-size: 18px;
-        width: 150px;
-        height: 43px;
+        font-size: 14px;
+        width: 140px;
+        height: 36px;
     }
 }
