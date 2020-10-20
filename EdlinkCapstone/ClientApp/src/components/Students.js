@@ -10,7 +10,7 @@ export class Students extends Component {
         super(props);
         // access query parameter
         const default_search_term = new URLSearchParams(props.location.search).get('search');
-        this.state = { students: [], search: default_search_term || "" };
+        this.state = { students: [], search: default_search_term || "", id:''};
     }
     componentDidMount() {
         // calling the populate schoool data method to fetch data from the API
@@ -22,31 +22,24 @@ export class Students extends Component {
     }
     onDeleteStudent = id => {
         console.log("Delete me", id);
+        axios({
+            method: 'delete',
+            url: 'https://localhost:44380/API/StudentAPI/Delete',
+            params: {
+                id: this.state.id,
+            }
+        })
+            .then((res) => {
+                console.log("deleted", res);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
         const { students } = this.state;
         this.setState({
-            students: students.filter(student => student.id !== id)
+            students: students.filter(student => student.id !== id),
+            id: id
         });
-        const studentApi = 'https://localhost:44380/API/StudentAPI/Delete' + id;
-
-        const myHeader = new Headers({
-            'Accept': 'application/json',
-            'Content-type': 'application/json; charset=utf-8'
-        });
-        fetch(studentApi, {
-            method: 'DELETE',
-            headers: myHeader
-
-        })
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        students: result.data
-                    });
-                }, (error) => {
-                    this.setState({ error });
-                }
-            )
     }
 
     render() {
