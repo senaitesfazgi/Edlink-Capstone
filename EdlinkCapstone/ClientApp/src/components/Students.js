@@ -20,10 +20,37 @@ export class Students extends Component {
     updateSearch(event) {
         this.setState({ search: event.target.value.substr(0, 20) });
     }
+    onDeleteStudent = id => {
+        console.log("Delete me", id);
+        const { students } = this.state;
+        this.setState({
+            students: students.filter(student => student.id !== id)
+        });
+        const studentApi = 'https://localhost:44380/API/StudentAPI/Delete' + id;
 
+        const myHeader = new Headers({
+            'Accept': 'application/json',
+            'Content-type': 'application/json; charset=utf-8'
+        });
+        fetch(studentApi, {
+            method: 'DELETE',
+            headers: myHeader
 
+        })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        students: result.data
+                    });
+                }, (error) => {
+                    this.setState({ error });
+                }
+            )
+    }
 
     render() {
+        const { students } = this.state;
 
         if (!this.props.userIsLoggedIn) {
             return <Redirect to={{
@@ -54,8 +81,8 @@ export class Students extends Component {
                                     onChange={this.updateSearch.bind(this)} />
                             </form>
                         </div>
-                        <div>
-                            <table className='table table-striped' aria-labelledby="tabelLabel">
+                    <div>
+                        <table className='table table-striped' aria-labelledby="tabelLabel">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -66,6 +93,7 @@ export class Students extends Component {
                                         <th>Phone Number</th>
                                         <th>Date of Birth</th>
                                         <th>School ID</th>
+                                        <th>DELETE Record</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -80,6 +108,7 @@ export class Students extends Component {
                                             <td>{student.phoneNumber}</td>
                                             <td>{student.dateOfBirth}</td>
                                             <td>{student.schoolID}</td>
+                                            <td> <button type="button" onClick={() => this.onDeleteStudent(student.id)}>DELETE</button> </td>
                                         </tr>
                                     )}
                                 </tbody>
