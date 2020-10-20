@@ -52,8 +52,13 @@ Project details document link: https://drive.google.com/file/d/1G0ktZqKGYpjRKKCY
 * `In Microsoft Visual Studio Community press the play icon button called IIS Express in the tools bar menu or alternatively go to the debug menu and press Start Without Debugging to view website on browser.`
 
 ## Citation/References
-   James MVC in class examples:
+  James MVC in class examples:
    
   https://github.com/TECHCareers-by-Manpower/4.1-MVC
   
   https://github.com/TECHCareers-by-Manpower/4.1-EF
+  
+  Other Resources:
+  
+  https://medium.com/technoetics/create-basic-login-forms-using-create-react-app-module-in-reactjs-511b9790dede
+  
