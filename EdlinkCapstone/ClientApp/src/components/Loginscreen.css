@@ -1,7 +1,34 @@
 ﻿/*Mobile First*/
-.loginmessage {
+.loginbackground {
     background-color: rgb(154, 216, 222);
     height: 150px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
     margin-top: 30px;
+}
+
+.loginmessage {
+    margin-left: 40px;
+}
+
+.loginRegisterButton {
+    margin-left: 95px;
+}
+
+/*For desktop*/
+@media screen and (min-width: 1024px) {
+    .loginbackground {
+        width: 48%;
+        float: right;
+        margin-top: -400px;
+        height: 400px;
+    }
+
+    .loginmessage {
+        margin-left: 145px;
+        margin-top: 140px;
+    }
+
+    .loginRegisterButton {
+        margin-left: 200px;
+    }
 }

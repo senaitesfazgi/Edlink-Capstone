@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Login from './Login';
 import Register from './Register';
 import { Redirect } from "react-router-dom";
+import './Loginscreen.css';
 
 class Loginscreen extends Component {
     constructor(props) {
@@ -34,8 +35,8 @@ class Loginscreen extends Component {
         }
         else {
             var loginscreen = [];
-            loginscreen.push(<Login parentContext={this} toggleUserLoggedIn={this.props.toggleUserLoggedIn}/>);
-            loginmessage = "Not Registered yet? Go to registration!";
+            loginscreen.push(<Login parentContext={this} toggleUserLoggedIn={this.props.toggleUserLoggedIn} />);
+            loginmessage = "Not Registered yet? Go to register!";
             this.setState({
                 loginscreen: loginscreen,
                 loginmessage: loginmessage,
@@ -62,12 +63,14 @@ class Loginscreen extends Component {
             />
         } else {
             return (
-                <div className="loginscreen">
+                <div>
                     {this.state.loginscreen}
-                    <div>
-                        {this.state.loginmessage}
+                    <div className="loginbackground">
+                        <div className="loginmessage">
+                            {this.state.loginmessage}
+                        </div>
                         <MuiThemeProvider>
-                            <div>
+                            <div className="loginRegisterButton">
                                 <RaisedButton label={this.state.buttonLabel} primary={true} style={style} onClick={(event) => this.handleClick(event)} />
                             </div>
                         </MuiThemeProvider>
