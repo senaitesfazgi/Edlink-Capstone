@@ -3,6 +3,10 @@
     background-color: rgb(154, 216, 222);
     height: 320px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
+    background-image: url('../assets/images/EdmontonSkylineGreen.png');
+    background-repeat: no-repeat;
+    background-position-y: -10px;
+    background-position-x: -80px;
 }
 
 .loginRegisterAccessPar {
@@ -22,20 +26,50 @@
     color: red;
 }
 
-.responseData{
-    color:red;
+.responseData {
+    color: red;
     margin-left: 40px;
 }
 
-/*For desktop*/
-@media screen and (min-width: 1024px) {
+/*For tablet*/
+@media (min-width: 576px) {
+    .loginIndent {
+        margin-left: 130px;
+    }
+
+    .loginButton {
+        margin-left: 68px;
+    }
+}
+
+/*For tablet*/
+@media (min-width: 768px) {
     .backGroundLogin {
         width: 48%;
         height: 400px;
+        background-image: url('../assets/images/EdmontonSkylineGreen.png');
+        background-repeat: no-repeat;
+        background-position-y: -10px;
+        background-position-x: -5px;
     }
 
     .loginIndent {
+        margin-top: 40px;
+        margin-left: 35px;
+    }
+}
+
+/*For tablet*/
+@media (min-width: 992px) {
+    .loginIndent {
         margin-top: 50px;
-        margin-left: 130px;
+        margin-left: 90px;
+    }
+}
+
+/*For desktop*/
+@media screen and (min-width: 1200px) {
+    .loginIndent {
+        margin-left: 140px;
     }
 }
