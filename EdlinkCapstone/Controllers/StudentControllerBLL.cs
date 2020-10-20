@@ -143,9 +143,9 @@ namespace EdlinkCapstone.Controllers
         {
             using (SchoolContext context  = new SchoolContext())
             {
-                Student target = context.Students.Where(x => x.ID == 3).Single();
-                target.FirstName = "Ashish";
-                target.LastName = "Patel";
+                Student target = context.Students.Where(x => x.ID == id).Single();
+                target.FirstName = firstName;
+                target.LastName = lastName;
                 context.SaveChanges();
             }
         }

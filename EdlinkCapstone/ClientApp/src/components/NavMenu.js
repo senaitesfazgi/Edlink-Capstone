@@ -36,7 +36,10 @@ export class NavMenu extends Component {
                             </NavItem>
                             <NavItem>
                                 <NavLink tag={Link} className="text-dark" to="/create-student">REGISTRATION</NavLink>
-                            </NavItem>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} className="text-dark" to="/students">STUDENTS</NavLink>
+                        </NavItem>
                         <NavItem>
                             {this.renderButton()}
                             </NavItem>

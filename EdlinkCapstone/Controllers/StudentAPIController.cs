@@ -52,8 +52,15 @@ namespace EdlinkCapstone.Controllers
         public ActionResult UpdateStudent_PUT(string id, string firstName, string lastName)
         {
             ActionResult response;
-            new StudentControllerBLL().UpdateStudent(Int32.Parse(id), firstName, lastName);
-            response = response = Ok(new { message = $"Successfully updated person at ID {id} to be {firstName} {lastName}." });
+            try
+            {
+                new StudentControllerBLL().UpdateStudent(int.Parse(id), firstName, lastName);
+                response = Ok(new { message = $"Successfully updated person at ID {id} to be {firstName} {lastName}." });
+            }
+            catch 
+            {
+                response = NotFound(new { error = $"No Student at ID {id} could be found." });
+            }
             return response;
         }
         [HttpDelete("Delete")]

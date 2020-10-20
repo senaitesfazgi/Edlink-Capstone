@@ -81,7 +81,7 @@ export class CreateStudent extends Component {
                         </div>
                         <div className="columnCS2">
                             <label className="textLabel" htmlfor="phoneNumber">PHONE NUMBER:</label>
-                            <input className="textInput" id="phoneNumber" type="number" value={this.state.phoneNumber} onChange={this.handleChange} required />
+                            <input className="textInput" id="phoneNumber" type="text" value={this.state.phoneNumber} onChange={this.handleChange} required />
                             <br />
                             <label className="textLabel" htmlfor="dateOfBirth">DATE OF BIRTH:</label>
                             <input className="textInput" id="dateOfBirth" type="date" value={this.state.dateOfBirth} onChange={this.handleChange} />

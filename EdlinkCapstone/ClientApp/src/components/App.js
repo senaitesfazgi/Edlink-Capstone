@@ -4,6 +4,7 @@ import { Layout } from './Layout';
 import { Home } from './Home';
 import { Programs } from './Programs';
 import { Schools } from './Schools';
+import { Students } from './Students';
 import '../custom.css'
 import { CreateStudent } from './CreateStudent';
 // Needed for onTouchTap
@@ -54,6 +55,11 @@ class App extends Component {
                         path='/schools'
                         render={props => (
                             <Schools {...props} toggleUserLoggedIn={this.toggleUserLoggedIn} userIsLoggedIn={this.state.userIsLoggedIn} />                        )}
+                    />
+                    <Route exact
+                        path='/students'
+                        render={props => (
+                            <Students {...props} toggleUserLoggedIn={this.toggleUserLoggedIn} userIsLoggedIn={this.state.userIsLoggedIn} />)}
                     />
                     <Route exact
                         path='/create-student'
