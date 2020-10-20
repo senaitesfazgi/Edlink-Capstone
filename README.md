@@ -58,8 +58,7 @@ Project details document link: https://drive.google.com/file/d/1G0ktZqKGYpjRKKCY
   
   https://github.com/TECHCareers-by-Manpower/4.1-EF
   
-  Other resources:
+  Other Resources:
   
   https://medium.com/technoetics/create-basic-login-forms-using-create-react-app-module-in-reactjs-511b9790dede
-  
   

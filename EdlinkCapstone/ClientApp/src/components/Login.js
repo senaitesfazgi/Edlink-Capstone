@@ -65,25 +65,30 @@ class Login extends Component {
                 <MuiThemeProvider>
                     <div>
                         <div className="title-background">
-                            <h2 className="title">LOGIN</h2>
+                            <h2 className="title">LOGIN / REGISTER</h2>
                         </div>
                         <div className="backGroundLogin">
-                            <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
-                            <p>Response Data: {JSON.stringify(this.state.response)}</p>
-                            <TextField
-                                hintText="Enter your Username"
-                                floatingLabelText="Email"
-                                onChange={(event, newValue) => this.setState({ email: newValue })}
-                            />
-                            <br />
-                            <TextField
-                                type="password"
-                                hintText="Enter your Password"
-                                floatingLabelText="Password"
-                                onChange={(event, newValue) => this.setState({ passWord: newValue })}
-                            />
-                            <br />
-                            <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)} />
+                            <div className="responseStatus">
+                                <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
+                            </div>
+                            <p className="loginRegisterAccessPar">Login/Register to gain access to Registration Page.</p>
+                            <div className="loginIndent">
+                                <TextField
+                                    hintText="Enter your Username"
+                                    floatingLabelText="Email"
+                                    onChange={(event, newValue) => this.setState({ email: newValue })}
+                                />
+                                <br />
+                                <TextField
+                                    type="password"
+                                    hintText="Enter your Password"
+                                    floatingLabelText="Password"
+                                    onChange={(event, newValue) => this.setState({ passWord: newValue })}
+                                />
+                                <div className="loginButton">
+                                    <RaisedButton label="Login" primary={true} style={style} onClick={(event) => this.handleClick(event)} />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </MuiThemeProvider>

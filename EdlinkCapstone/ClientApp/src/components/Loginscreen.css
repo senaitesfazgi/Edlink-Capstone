@@ -1,7 +1,72 @@
 ﻿/*Mobile First*/
-.loginmessage {
-    background-color: rgb(154, 216, 222);
+.loginbackground {
+    background-color: rgb(164, 203, 165);
     height: 150px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
     margin-top: 30px;
+}
+
+.loginmessage {
+    margin-left: 40px;
+}
+
+.loginRegisterButton {
+    margin-left: 95px;
+}
+
+/*For tablet*/
+@media (min-width: 576px) {
+    .loginmessage {
+        margin-left: 140px;
+    }
+
+    .loginRegisterButton {
+        margin-left: 190px;
+    }
+}
+
+/*For tablet*/
+@media (min-width: 768px) {
+    .loginbackground {
+        background-color: rgb(154, 216, 222);
+        width: 48%;
+        float: right;
+        margin-top: -400px;
+        height: 400px;
+        background-image: url('../assets/images/EdmontonSkylineGreen.png');
+        background-repeat: no-repeat;
+        background-position-y: -10px;
+        background-position-x: -530px;
+    }
+
+    .loginmessage {
+        margin-left: 48px;
+        margin-top: 140px;
+    }
+
+    .loginRegisterButton {
+        margin-left: 100px;
+    }
+}
+
+/*For tablet*/
+@media (min-width: 992px) {
+    .loginmessage {
+        margin-left: 100px;
+    }
+
+    .loginRegisterButton {
+        margin-left: 150px;
+    }
+}
+
+/*For desktop*/
+@media screen and (min-width: 1200px) {
+    .loginmessage {
+        margin-left: 150px;
+    }
+
+    .loginRegisterButton {
+        margin-left: 200px;
+    }
 }
