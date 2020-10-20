@@ -48,12 +48,8 @@ export class CreateStudent extends Component {
 
     // Either way we render the title, and a description.
     render() {
-        if (!this.props.userIsLoggedIn) {
-            return <Redirect to={{
-                pathname: "/loginpage",
-            }}
-            />
-        } else {
+        if (this.props.userIsLoggedIn) {
+
             return (
                 <div className="backGroundRegistration">
                     <div className="title-background">
@@ -93,6 +89,12 @@ export class CreateStudent extends Component {
                     </form>
                 </div>
             );
+            
+        } else {
+            return <Redirect to={{
+                pathname: "/loginpage",
+            }}
+            />
         }
     }
 

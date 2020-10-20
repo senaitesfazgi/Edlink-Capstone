@@ -62,10 +62,10 @@ namespace EdlinkCapstone.Controllers
                 {
                     exception.SubExceptions.Add(new ArgumentNullException("Email was not provided."));
                 }
-                else if(context.Students.Where(x => x.Email == email).Count() != 1)
+               /* else if(context.Students.Where(x => x.Email == email).Count() != 1)
                 {
                     exception.SubExceptions.Add(new Exception("Email is already used"));
-                }
+                }*/
                 else
                 {
                     email = email.Trim();
