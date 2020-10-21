@@ -11,6 +11,7 @@ export class Home extends Component {
         }
     }
 
+    //Handle the event to set search value for user.
     handleChange = (e) => {
         this.setState({
             searchTerm: e.target.value

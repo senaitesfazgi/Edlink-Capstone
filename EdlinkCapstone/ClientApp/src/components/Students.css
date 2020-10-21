@@ -1,0 +1,24 @@
+﻿﻿ /*Mobile First*/
+.studentsTable {
+    background-color: rgb(154, 216, 222);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.5);
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.deleteButton {
+    background-color: rgb(27, 168, 194);
+    font-size: 14px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+    color: white !important;
+    margin: 5px;
+    border: none;
+}
+
+    .deleteButton:hover {
+        background-color: rgb(101, 196, 217);
+    }
+
