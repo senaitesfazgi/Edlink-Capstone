@@ -13,10 +13,77 @@ export class CreateStudent extends Component {
     constructor(props) {
         // 1) When we build the component, we assign the state to be loading, and register an empty list in which to store our forecasts.
         super(props);
-        this.state = { statusCode: 0, response: [], firstName: "", lastName: "", address: "", email: "", phoneNumber: "", dateOfBirth: "", schoolID: ""};
+        this.state = {
+            statusCode: 0, response: [], firstName: "", lastName: "", address: "", email: "", phoneNumber: "", dateOfBirth: "", schoolID: "", errors: {}, fields: {}
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleValidation() {
+        let fields = this.state.fields;
+        let errors = {};
+        let formIsValid = true;
+
+        //first name 
+        if (!this.state["firstName"]) {
+            formIsValid = false;
+            errors["firstName"] = "First Name Cannot be empty";
+        }
+        //last name
+        if (!this.state["lastName"]) {
+            formIsValid = false;
+            errors["lastName"] = "Last name Cannot be empty";
+        }
+
+
+        //last name
+        if (!this.state["address"]) {
+            formIsValid = false;
+            errors["address"] = "Address Cannot be empty";
+        }
+
+
+        //Email
+        if (!this.state["email"]) {
+            formIsValid = false;
+            errors["email"] = "Cannot be empty";
+        }
+
+        if (typeof this.state["email"] !== "undefined") {
+            let lastAtPos = this.state["email"].lastIndexOf('@');
+            let lastDotPos = this.state["email"].lastIndexOf('.');
+
+            if (!(lastAtPos < lastDotPos && lastAtPos > 0 && this.state["email"].indexOf('@@') == -1 && lastDotPos > 2 && (this.state["email"].length - lastDotPos) > 2)) {
+                formIsValid = false;
+                errors["email"] = "Email is not valid";
+            }
+        }
+
+        //last name
+        if (!this.state["phoneNumber"]) {
+            formIsValid = false;
+            errors["phoneNumber"] = "PhoneNumber Cannot be empty";
+        }
+
+
+        //last name
+        if (!this.state["dateOfBirth"]) {
+            formIsValid = false;
+            errors["dateOfBirth"] = "DateOfBirth Cannot be empty";
+        }
+
+
+        //last name
+        if (!this.state["schoolID"]) {
+            formIsValid = false;
+            errors["schoolID"] = "SchoolID Cannot be empty";
+        }
+
+
+        this.setState({ errors: errors });
+        return formIsValid;
     }
 
     handleChange(event) {
@@ -61,29 +128,37 @@ export class CreateStudent extends Component {
                     <div className="responseData">
                         <p>{JSON.stringify(this.state.response)}</p>
                     </div>
-                    <form className="studentDetails" onSubmit={this.handleSubmit}>
+                    <form className="studentDetails" onSubmit={this.handleSubmit} autocomplete="off">
                         <div className="columnCS1">
                             <label className="textLabel" htmlfor="firstName">FIRST NAME:</label>
-                            <input className="textInput" id="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} required />
+                            <input className="textInput" ref="firstName" id="firstName" type="text" value={this.state.firstName} onChange={this.handleChange}  />
+                            <span className="error errorMessage">{this.state.errors["firstName"]}</span>
                             <br />
                             <label className="textLabel" htmlfor="lastName">LAST NAME:</label>
-                            <input className="textInput" id="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} required />
+                            <input className="textInput" id="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} />
+                            <span className="error errorMessage">{this.state.errors["lastName"]}</span>
                             <br />
                             <label className="textLabel" htmlfor="address">ADDRESS:</label>
-                            <input className="textInput" id="address" type="text" value={this.state.address} onChange={this.handleChange} required />
+                            <input className="textInput" id="address" type="text" value={this.state.address} onChange={this.handleChange} />
+                            #<span className="error errorMessage">{this.state.errors["address"]}</span>
                             <br />
                             <label className="textLabel" htmlfor="email">EMAIL:</label>
-                            <input className="textInput" id="email" type="text" value={this.state.email} onChange={this.handleChange} required />
+                            <input className="textInput" id="email" type="text" value={this.state.email} onChange={this.handleChange} />
+                            <span className="error errorMessage">{this.state.errors["email"]}</span>
+
                         </div>
                         <div className="columnCS2">
                             <label className="textLabel" htmlfor="phoneNumber">PHONE NUMBER:</label>
-                            <input className="textInput" id="phoneNumber" type="text" value={this.state.phoneNumber} onChange={this.handleChange} required />
+                            <input className="textInput" id="phoneNumber" type="text" value={this.state.phoneNumber} onChange={this.handleChange} />
+                            # <span className="error errorMessage">{this.state.errors["phoneNumber"]}</span>
                             <br />
                             <label className="textLabel" htmlfor="dateOfBirth">DATE OF BIRTH:</label>
                             <input className="textInput" id="dateOfBirth" type="date" value={this.state.dateOfBirth} onChange={this.handleChange} />
+                            #<span className="error errorMessage">{this.state.errors["dateOfBirth"]}</span>
                             <br />
                             <label className="textLabel" htmlfor="schoolID">SCHOOL ID:</label>
                             <input className="textInput" id="schoolID" type="text" value={this.state.schoolID} onChange={this.handleChange} />
+                            #<span className="error errorMessage">{this.state.errors["schoolID"]}</span>
                         </div>
                         <input className="submitButton" type="submit" value="REGISTER" />
                     </form>
@@ -101,25 +176,29 @@ export class CreateStudent extends Component {
     async handleSubmit(event) {
         event.preventDefault();
         this.setState({ waiting: true });
-        // Axios replaces fetch(), same concept. Send the response and "then" when it comes back, put it in the state.
-        axios({
-            method: 'post',
-            url: 'https://localhost:44380/API/StudentAPI/AddStudent',
-            params: {
-                firstName: this.state.firstName,
-                lastName: this.state.lastName,
-                address: this.state.address,
-                email: this.state.email,
-                phoneNumber: this.state.phoneNumber,
-                dateOfBirth: this.state.dateOfBirth,
-                schoolID: this.state.schoolID
-            }
-        })
-            .then((res) => {
-                this.setState({ statusCode: res.status, response: res.data, waiting: false });
+
+        if (this.handleValidation()) {
+            // Axios replaces fetch(), same concept. Send the response and "then" when it comes back, put it in the state.
+            axios({
+                method: 'post',
+                url: 'https://localhost:44380/API/StudentAPI/AddStudent',
+                params: {
+                    firstName: this.state.firstName,
+                    lastName: this.state.lastName,
+                    address: this.state.address,
+                    email: this.state.email,
+                    phoneNumber: this.state.phoneNumber,
+                    dateOfBirth: this.state.dateOfBirth,
+                    schoolID: this.state.schoolID
+                }
             })
-            .catch((err) => {
-                this.setState({ statusCode: err.response.status, response: err.response.data, waiting: false });
-            });
+                .then((res) => {
+                    this.setState({ statusCode: res.status, response: res.data, waiting: false });
+                })
+                .catch((err) => {
+                    this.setState({ statusCode: err.response.status, response: err.response.data, waiting: false });
+                });
+        }
+
     }
 }
