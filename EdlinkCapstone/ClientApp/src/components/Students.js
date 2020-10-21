@@ -20,13 +20,13 @@ export class Students extends Component {
     updateSearch(event) {
         this.setState({ search: event.target.value.substr(0, 20) });
     }
-    onDeleteStudent = id => {
+    onDeleteStudent( id)  {
         console.log("Delete me", id);
         axios({
             method: 'delete',
             url: 'https://localhost:44380/API/StudentAPI/Delete',
             params: {
-                id: this.state.id,
+                id: id,
             }
         })
             .then((res) => {
