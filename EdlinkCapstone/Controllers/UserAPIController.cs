@@ -13,6 +13,7 @@ namespace EdlinkCapstone.Controllers
     public class UserAPIController : ControllerBase
     {
         [HttpPost("authuser")]
+        //This method will allow user to login
         public ActionResult<User> LogIn(string email, string passWord)
         {
             User authUser;
@@ -34,6 +35,7 @@ namespace EdlinkCapstone.Controllers
         }
 
         [HttpPost("registeruser")]
+        //This method will allow users to register 
         public ActionResult<User> RegisterUser(string firstName, string lastName, string email, string passWord)
         {
             ActionResult<User> response;

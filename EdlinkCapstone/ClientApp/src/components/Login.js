@@ -26,6 +26,7 @@ class Login extends Component {
                 passWord: this.state.passWord
             }
         })
+            //Return the response status to users
             .then((response) => {
                 this.setState({ statusCode: response.status, response: response.data, waiting: false });
                 console.log(response);
@@ -59,6 +60,7 @@ class Login extends Component {
                 console.log(error);
             });
     }
+    //set up lay out for users to login and handle the event when user send data for login
     render() {
         return (
             <div>

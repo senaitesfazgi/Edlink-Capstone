@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EdlinkCapstone.Models
 {
+    //This context is needed because users table is not related to any of the tables to the SchoolContext.
     public partial class UserContext : DbContext
     {
         public UserContext()

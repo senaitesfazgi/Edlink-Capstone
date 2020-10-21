@@ -12,7 +12,8 @@ namespace EdlinkCapstone.Controllers
     {
         //TODO: checking for  Duplicates using email
         //Currently creating or registering a student
-
+        
+        //This method will let users to login
         public User LogIn(string email, string passWord)
         {
             using (UserContext context = new UserContext())
@@ -50,6 +51,7 @@ namespace EdlinkCapstone.Controllers
                     return authUser;
                 }
         }
+        //This method will let users to register for their kid
         public int RegisterUser(string firstName, string lastName, string email, string passWord)
         {
             int createdID;
@@ -119,8 +121,6 @@ namespace EdlinkCapstone.Controllers
                 createdID = newUser.ID;
             }
            return createdID;
-        }
-
-       
+        }     
     }
 }
