@@ -1,10 +1,11 @@
 {
+ 
   "programs": [
     {
 
       "programName": "ADVANCE PROGRAM",
       "programImage": "AP.png",
-      "link": "https://epsb.ca/programs/arts/"
+      "link": "https://epsb.ca/programs/teachingphilosophy/advancedplacement/"
     },
     {
 
@@ -22,13 +23,13 @@
 
       "programName": "MATH",
       "programImage": "Math.png",
-      "link": "https://epsb.ca/programs/arts/"
+      "link": "https://epsb.ca/programs/regularprogram/"
     },
     {
 
       "programName": "MUSIC",
       "programImage": "Music.png",
-      "link": "https://epsb.ca/programs/arts/"
+      "link": "https://epsb.ca/programs/arts/victoriaschoolofperformingandvisualarts/"
     },
     {
 
@@ -40,31 +41,31 @@
 
       "programName": "SCIENCE",
       "programImage": "Science.png",
-      "link": "https://epsb.ca/programs/arts/"
+      "link": "https://epsb.ca/programs/teachingphilosophy/sciences/"
     },
     {
 
       "programName": "SOCIAL STUDIES",
       "programImage": "SocialStudy.png",
-      "link": "https://epsb.ca/programs/arts/"
+      "link": "https://epsb.ca/programs/fnmieducation/"
     },
     {
 
-      "programName": "SPECIAL NEEDS EDUCATION",
+      "programName": "SPECIAL PROGRAMS",
       "programImage": "SpecialNeeds.png",
-      "link": "https://epsb.ca/programs/arts/"
+      "link": "https://epsb.ca/programs/specializedprograms/"
     },
     {
 
       "programName": "SUMMER SCHOOL",
       "programImage": "SummerSchool.png",
-      "link": "https://epsb.ca/programs/arts/"
+      "link": "https://epsb.ca/programs/summerschool/"
     },
     {
 
-      "programName": "PSYCHOLOGY",
+      "programName": "MENTAL HEALTH",
       "programImage": "AP.png",
-      "link": "https://epsb.ca/programs/arts/"
+      "link": "https://epsb.ca/programs/specializedprograms/mentalhealth/"
     }
   ]
 }
