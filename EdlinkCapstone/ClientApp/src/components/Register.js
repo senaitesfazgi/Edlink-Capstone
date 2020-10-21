@@ -31,6 +31,7 @@ class Register extends Component {
                 passWord: this.state.passWord
             }
         })
+            //Response status will take place when user register and send the data to database.
             .then((response) => {
                 this.setState({ statusCode: response.status, response: response.data, waiting: false });
                 console.log(response);
@@ -52,6 +53,8 @@ class Register extends Component {
                 console.log(error);
             });
     }
+
+    //set up the layout/form and handle the event for user to access the properties for registration
     render() {
         return (
             <div>

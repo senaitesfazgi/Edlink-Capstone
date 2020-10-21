@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EdlinkCapstone.Models
 {
+    //This context contains both School and Student Tables
     public partial class SchoolContext : DbContext
     {
         public SchoolContext()

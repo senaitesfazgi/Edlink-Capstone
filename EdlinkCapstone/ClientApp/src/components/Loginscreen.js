@@ -19,6 +19,8 @@ class Loginscreen extends Component {
             userIsLoggedIn: false
         }
     }
+
+    //handle event when user click on login button and display apppropriate message according to users input. 
     handleClick(event) {
         console.log("event", event);
         var loginmessage;
@@ -45,6 +47,7 @@ class Loginscreen extends Component {
             })
         }
     }
+    //Allow user to push to login using related properties.
     componentWillMount() {
         var loginscreen = [];
         loginscreen.push(<Login parentContext={this} appContext={this.props.parentContext} toggleUserLoggedIn={this.props.toggleUserLoggedIn} />);
@@ -54,6 +57,8 @@ class Loginscreen extends Component {
             loginmessage: loginmessage
         })
     }
+
+    //Return the state of user when logged in.
     render() {
         if (this.state.userIsLoggedIn) {
             return <Redirect to={{

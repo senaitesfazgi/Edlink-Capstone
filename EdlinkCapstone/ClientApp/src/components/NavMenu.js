@@ -20,6 +20,7 @@ export class NavMenu extends Component {
         }
     }
 
+    //set up the lay out for user to access different components and their properties.
     render() {
         return (
             <header>

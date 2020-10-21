@@ -86,6 +86,7 @@ export class CreateStudent extends Component {
         return formIsValid;
     }
 
+    //Set state to handle event for all input fields
     handleChange(event) {
         switch (event.target.id) {
             case "firstName":
@@ -166,6 +167,7 @@ export class CreateStudent extends Component {
             );
             
         } else {
+            //User will be redirected to login page
             return <Redirect to={{
                 pathname: "/loginpage",
             }}
@@ -192,6 +194,7 @@ export class CreateStudent extends Component {
                     schoolID: this.state.schoolID
                 }
             })
+                //return the response status and data after user send data to database
                 .then((res) => {
                     this.setState({ statusCode: res.status, response: res.data, waiting: false });
                 })

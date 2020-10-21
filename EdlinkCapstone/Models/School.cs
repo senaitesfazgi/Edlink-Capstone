@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace EdlinkCapstone.Models
 {
+    //This display the School table
     [Table("school")]
     public partial class School
     {

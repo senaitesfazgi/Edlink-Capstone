@@ -19,13 +19,13 @@ class App extends Component {
         }
     }
 
-    // change the user is logged in state
+    // change the user for logged in state
     toggleUserLoggedIn = () => {
         this.setState({
             userIsLoggedIn: !this.state.userIsLoggedIn
         });
     }
-
+    //This method will let user to be in set state for login page
     componentWillMount() {
         var loginPage = [];
         loginPage.push(<Loginscreen parentContext={this} />);
@@ -35,6 +35,7 @@ class App extends Component {
     }
     render() {
         return (
+            //User will be in the state to login using their respective properties.
             <Layout toggleUserLoggedIn={this.toggleUserLoggedIn} userIsLoggedIn={this.state.userIsLoggedIn} >
                 <div className="App">
                     <Route path='/loginPage'
