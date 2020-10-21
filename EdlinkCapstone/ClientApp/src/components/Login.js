@@ -70,9 +70,6 @@ class Login extends Component {
                             <h2 className="title">LOGIN / REGISTER</h2>
                         </div>
                         <div className="backGroundLogin">
-                            <div className="responseStatus">
-                                <p>{this.state.waiting ? "Request sent, awaiting response." : "Response received, status: " + this.state.statusCode}</p>
-                            </div>
                             <p className="loginRegisterAccessPar">Login/Register to gain access to Registration Page.</p>
                             <div className="loginIndent">
                                 <TextField

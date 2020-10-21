@@ -8,16 +8,6 @@
     background-position-y: 205px;
 }
 
-.responseStatus {
-    display: none;
-    color: red;
-}
-
-.responseData {
-    color: red;
-    margin-left: 40px;
-}
-
 .Title {
     margin-left: 60px;
 }

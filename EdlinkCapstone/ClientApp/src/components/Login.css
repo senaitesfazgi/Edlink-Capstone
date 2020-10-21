@@ -21,16 +21,6 @@
     margin-left: 40px;
 }
 
-.responseStatus {
-    display: none;
-    color: red;
-}
-
-.responseData {
-    color: red;
-    margin-left: 40px;
-}
-
 /*For tablet*/
 @media (min-width: 576px) {
     .loginIndent {
