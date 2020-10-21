@@ -140,7 +140,7 @@ export class CreateStudent extends Component {
                             <br />
                             <label className="textLabel" htmlfor="address">ADDRESS:</label>
                             <input className="textInput" id="address" type="text" value={this.state.address} onChange={this.handleChange} />
-                            #<span className="error errorMessage">{this.state.errors["address"]}</span>
+                            <span className="error errorMessage">{this.state.errors["address"]}</span>
                             <br />
                             <label className="textLabel" htmlfor="email">EMAIL:</label>
                             <input className="textInput" id="email" type="text" value={this.state.email} onChange={this.handleChange} />
@@ -150,15 +150,15 @@ export class CreateStudent extends Component {
                         <div className="columnCS2">
                             <label className="textLabel" htmlfor="phoneNumber">PHONE NUMBER:</label>
                             <input className="textInput" id="phoneNumber" type="text" value={this.state.phoneNumber} onChange={this.handleChange} />
-                            # <span className="error errorMessage">{this.state.errors["phoneNumber"]}</span>
+                            <span className="error errorMessage">{this.state.errors["phoneNumber"]}</span>
                             <br />
                             <label className="textLabel" htmlfor="dateOfBirth">DATE OF BIRTH:</label>
                             <input className="textInput" id="dateOfBirth" type="date" value={this.state.dateOfBirth} onChange={this.handleChange} />
-                            #<span className="error errorMessage">{this.state.errors["dateOfBirth"]}</span>
+                            <span className="error errorMessage">{this.state.errors["dateOfBirth"]}</span>
                             <br />
                             <label className="textLabel" htmlfor="schoolID">SCHOOL ID:</label>
                             <input className="textInput" id="schoolID" type="text" value={this.state.schoolID} onChange={this.handleChange} />
-                            #<span className="error errorMessage">{this.state.errors["schoolID"]}</span>
+                            <span className="error errorMessage">{this.state.errors["schoolID"]}</span>
                         </div>
                         <input className="submitButton" type="submit" value="REGISTER" />
                     </form>
