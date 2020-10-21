@@ -13,6 +13,7 @@ namespace EdlinkCapstone.Controllers
     public class StudentAPIController : ControllerBase
     {
         [HttpPost("AddStudent")]
+        // This method will create and add the student in the database 
         public ActionResult<Student> AddStudent(string firstName, string lastName, string address, string email, string phoneNumber, DateTime dateOfBirth, int schoolID)
         {
             ActionResult<Student> response;
@@ -33,6 +34,7 @@ namespace EdlinkCapstone.Controllers
         }
 
         [HttpGet("ShowStudents")]
+        // This method will display the list of all Students
         public ActionResult<List<Student>> ShowStudents()
         {
             // TODO: Catch for unable to connect to database.
@@ -41,6 +43,7 @@ namespace EdlinkCapstone.Controllers
         }
 
         [HttpGet("ShowStudentsBySchoolID")]
+        //This method will display the list of Students using ID
         public ActionResult<List<Student>> ShowStudentsBySchoolID(string schoolID)
         {
             // TODO: Catch for unable to connect to database.
@@ -49,6 +52,7 @@ namespace EdlinkCapstone.Controllers
         }
 
         [HttpPut("Update")]
+        //This method will update the student data in the database
         public ActionResult UpdateStudent_PUT(string id, string firstName, string lastName)
         {
             ActionResult response;
@@ -64,6 +68,7 @@ namespace EdlinkCapstone.Controllers
             return response;
         }
         [HttpDelete("Delete")]
+        //This method will delete the record of Student from the database
         public ActionResult DeleteStudent_DELETE(string id)
         {
             ActionResult response;

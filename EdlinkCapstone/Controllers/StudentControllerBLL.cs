@@ -118,6 +118,7 @@ namespace EdlinkCapstone.Controllers
            return createdID;
         }
 
+        //This method will get the list of all Students from the database
         public List<Student> GetStudents()
         {
             List<Student> students;
@@ -128,6 +129,7 @@ namespace EdlinkCapstone.Controllers
             return students;
         }
 
+        //This method will list of all Students by using SchoolID
         public List<Student> GetStudentsBySchoolID(int schoolID)
         {
             List<Student> students;
@@ -149,6 +151,7 @@ namespace EdlinkCapstone.Controllers
                 context.SaveChanges();
             }
         }
+        //This method will delete the record of Student using ID
         public void DeleteStudentByID(int id)
         {
             using (SchoolContext context = new SchoolContext())

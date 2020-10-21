@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace EdlinkCapstone.Models
 {
+    //This display the User Table
     [Table("user")]
     public class User
     {
