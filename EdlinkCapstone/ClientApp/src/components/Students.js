@@ -62,7 +62,6 @@ export class Students extends Component {
                     return <li>{props.message}</li>;
             }
             return (
-
                     <div>
                         <div>
                             <div className="title-background">
@@ -74,7 +73,7 @@ export class Students extends Component {
                                     onChange={this.updateSearch.bind(this)} />
                             </form>
                         </div>
-                    <div>
+                    <div className="studentsTable">
                         <table className='table table-striped' aria-labelledby="tabelLabel">
                                 <thead>
                                     <tr>
