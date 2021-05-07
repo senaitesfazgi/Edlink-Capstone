@@ -23,10 +23,10 @@ namespace EdlinkCapstone
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            
             services.AddControllersWithViews();
-            services.AddDbContext<SchoolContext>(options => options.UseMySql("server=localhost;port=3306;user=root;database=capstone_demo"));
-
+            services.AddDbContext<SchoolContext>(options =>
+            options.UseSqlServer("server=(localdb)\\mssqllocaldb;Database=EDLinkDB;Trusted_Connection=True;MultipleActiveResultSets=true"));
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

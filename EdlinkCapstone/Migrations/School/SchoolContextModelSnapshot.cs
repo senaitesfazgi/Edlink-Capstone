@@ -3,9 +3,10 @@ using System;
 using EdlinkCapstone.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace EdlinkCapstone.Migrations
+namespace EdlinkCapstone.Migrations.School
 {
     [DbContext(typeof(SchoolContext))]
     partial class SchoolContextModelSnapshot : ModelSnapshot
@@ -15,14 +16,16 @@ namespace EdlinkCapstone.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.8")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+                .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("EdlinkCapstone.Models.School", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("ID")
-                        .HasColumnType("int(10)");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("SchoolAddress")
                         .HasColumnType("char(12)");
@@ -73,7 +76,8 @@ namespace EdlinkCapstone.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("ID")
-                        .HasColumnType("int(10)");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Address")
                         .HasColumnType("varchar(50)")
@@ -107,7 +111,7 @@ namespace EdlinkCapstone.Migrations
 
                     b.Property<int>("SchoolID")
                         .HasColumnName("SchoolID")
-                        .HasColumnType("int(10)");
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 

@@ -17,7 +17,7 @@ namespace EdlinkCapstone.Models
         }
 
         [Key]
-        [Column("ID", TypeName = "int(10)")]
+        [Column("ID", TypeName = "int")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         [Required]

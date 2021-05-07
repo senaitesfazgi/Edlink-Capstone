@@ -1,10 +1,9 @@
 ﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace EdlinkCapstone.Migrations
+namespace EdlinkCapstone.Migrations.School
 {
-    public partial class InitialCreate : Migration
+    public partial class MySQL_To_MsSQL : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,8 +11,8 @@ namespace EdlinkCapstone.Migrations
                 name: "school",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int(10)", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     SchoolName = table.Column<string>(type: "char(12)", nullable: false),
                     SchoolAddress = table.Column<string>(type: "char(12)", nullable: true)
                 },
@@ -26,25 +25,15 @@ namespace EdlinkCapstone.Migrations
                 name: "student",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int(10)", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    FirstName = table.Column<string>(type: "varchar(50)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                        .Annotation("MySql:Collation", "utf8mb4_general_ci"),
-                    LastName = table.Column<string>(type: "varchar(50)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                        .Annotation("MySql:Collation", "utf8mb4_general_ci"),
-                    Address = table.Column<string>(type: "varchar(50)", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                        .Annotation("MySql:Collation", "utf8mb4_general_ci"),
-                    Email = table.Column<string>(type: "varchar(50)", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                        .Annotation("MySql:Collation", "utf8mb4_general_ci"),
-                    PhoneNumber = table.Column<string>(type: "varchar(50)", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                        .Annotation("MySql:Collation", "utf8mb4_general_ci"),
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(type: "varchar(50)", nullable: false),
+                    LastName = table.Column<string>(type: "varchar(50)", nullable: false),
+                    Address = table.Column<string>(type: "varchar(50)", nullable: true),
+                    Email = table.Column<string>(type: "varchar(50)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "varchar(50)", nullable: true),
                     DateOfBirth = table.Column<DateTime>(type: "date", nullable: false),
-                    SchoolID = table.Column<int>(type: "int(10)", nullable: false)
+                    SchoolID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

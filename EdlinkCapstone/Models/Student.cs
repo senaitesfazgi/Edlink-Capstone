@@ -14,7 +14,7 @@ namespace EdlinkCapstone.Models
         // This initializes an empty list so we don't get null reference exceptions for our list.
 
         [Key]
-        [Column("ID", TypeName = "int(10)")]
+        [Column("ID", TypeName = "int")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         [Required]
@@ -37,7 +37,7 @@ namespace EdlinkCapstone.Models
         [Column(TypeName = "date")]
         public DateTime DateOfBirth { get; set; }
 
-        [Column("SchoolID", TypeName = "int(10)")]
+        [Column("SchoolID", TypeName = "int")]
         public int SchoolID { get; set; }
         [Required]
 
